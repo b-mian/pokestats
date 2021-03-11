@@ -43,11 +43,16 @@
 /*********************************
       TOP TEN POKEMON LISTINGS
 **********************************/
-.pkmn-lists {
-  list-style-type: none;
-  display: inline-block;
-  margin: 0;
-  padding: 0;
+table {
+  margin-bottom: 50px;
+}
+
+.pkmn-name {
+  text-align: center;
+}
+
+.pkmn_stat {
+  margin: 0 10px;
 }
 
 .top10-div {
@@ -82,14 +87,17 @@
 **********************************/
 th, td {
   padding: 15px;
+  margin: 5px 0 5px;
+  text-align: center;
 }
 
 .title {
   font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .row {
-  margin: 75px 0;
+  margin: 55px 0;
 }
 
 
