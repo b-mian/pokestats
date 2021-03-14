@@ -5,22 +5,27 @@ import defense from '../data/top_10_defense.json';
 import non_legendary from '../data/top_10_non_legendary.json';
 import legendary from '../data/top_10_legendary.json';
 import TopTenList from './top_ten_list.js';
+import TypesChart from './types_charts.js';
 import {useState} from 'react';
-import TypesChart from './types_charts';
 
 
-const TopTens = () => {
-    const [show, setShow] = useState(false);
+
+const Master = () => {
+    const [showLists, setShowLists] = useState(false);
+    const [showTypeCharts, setShowTypeCharts] = useState(false);
     return (
-        <div className="top10-div">
+        <div className="main-div">
             <div className="container container-fluid">
                 <div className="row">
-                    <div className="col-md-6">
-                        <button onClick={() => setShow(!show)} className="top10btn btn-primary">Top 10 Pokemon</button>
+                    <div className="col-md-6 col-xs-12">
+                        <button onClick={() => setShowLists(!showLists)} className="top10btn btn-primary">Top 10 Pokemon</button>
+                    </div>
+                    <div className="col-md-6 col-xs-12">
+                        <button onClick={() => setShowTypeCharts(!showTypeCharts)} className="chartbtn btn-success">Charts and Graphs</button>
                     </div>
                 </div>
             </div>
-            <div className="container container-fluid" style={{ display: (show ? 'inline-block' : 'none') }}>
+            <div className="container container-fluid" style={{ display: (showLists ? 'inline-block' : 'none') }}>
                 <div className="topList row">
                     <TopTenList pkmnList={hp} title="by HP" />
                     <TopTenList pkmnList={fastest} title="by Speed" />
@@ -29,12 +34,15 @@ const TopTens = () => {
                     <TopTenList pkmnList={legendary} title="Legendary" />
                     <TopTenList pkmnList={non_legendary} title="Non-Legendary" />
                 </div>    
-            </div> 
+            </div>
+            <div className="graphs container container-fluid" style={{ display: (showTypeCharts ? 'inline-block' : 'none') }}>
+                <TypesChart /> 
+            </div>
         </div>
     )
 }
 
-export default TopTens;
+export default Master;
 
 /* 
 <div className="col-md-6">

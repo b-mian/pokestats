@@ -16,7 +16,7 @@ function headings(pkmnData) {
 
 const TopTenList = ({pkmnList, title}) => {
     return ( 
-        <div className="col-md-4 col-sm-6 col-xs-12">
+        <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
             <h4 className="title">Top 10 {title}</h4>
             <ol>
                 {headings(pkmnList).map((value, index) => {

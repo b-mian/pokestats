@@ -1,16 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 import Jumbotron from './components/jumbotron';
-import TopTens from './components/top_tens';
-import TypesChart from './components/types_charts';
+import Master from './components/master';
+
 
 
 function App() {
   return (
     <div className="App">
       <Jumbotron />
-      <TopTens />
-      <TypesChart />
+      <Master />
     </div>
   );
 }

@@ -31,6 +31,8 @@ body {
 **********************************/
 .jumbotron {
   background-color: tomato;
+  width: 100vw;
+  opacity: 0.9;
 }
 
 .jumbotron h1 {
@@ -59,27 +61,23 @@ table {
   margin: 0 10px;
 }
 
-.top10-div, .chartsDiv {
-  display: inline;
+.main-div {
   margin-top: 0;
 }
 
 .top10btn, .chartbtn {
-  display: inline;
-  margin: 25px 0;
-  width: 20vw;
+  display: inline-block;
+  margin: 25px 20px;
+  width: 350px;
   height: 100px;
   border-radius: 10px;
   font-size: 2.25rem;
   text-align: center;
 }
 
-.graphs, .topList {
-  -moz-transition: opacity 0.4s ease-in-out;
-  -o-transition: opacity 0.4s ease-in-out;
-  -webkit-transition: opacity 0.4s ease-in-out;
-  transition: opacity 0.4s ease-in-out;
-}
+
+
+
 
 
 
@@ -111,7 +109,7 @@ th, td {
 }
 
 .row {
-  margin: 55px 0;
+  margin: 25px 0;
 }
 
 
