@@ -21,6 +21,10 @@
   color: #61dafb;
 }
 
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
 
 /*********************************
       JUMBOTRON ON HOMEPAGE
@@ -55,19 +59,29 @@ table {
   margin: 0 10px;
 }
 
-.top10-div {
+.top10-div, .chartsDiv {
+  display: inline;
   margin-top: 0;
 }
 
-.top10btn {
-  display: inline-block;
+.top10btn, .chartbtn {
+  display: inline;
   margin: 25px 0;
-  width: 100%;
+  width: 20vw;
   height: 100px;
   border-radius: 10px;
   font-size: 2.25rem;
   text-align: center;
 }
+
+.graphs, .topList {
+  -moz-transition: opacity 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+}
+
+
 
 /*********************************
           POKEMON IMAGES

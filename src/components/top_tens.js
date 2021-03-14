@@ -6,6 +6,7 @@ import non_legendary from '../data/top_10_non_legendary.json';
 import legendary from '../data/top_10_legendary.json';
 import TopTenList from './top_ten_list.js';
 import {useState} from 'react';
+import TypesChart from './types_charts';
 
 
 const TopTens = () => {
@@ -17,19 +18,10 @@ const TopTens = () => {
                     <div className="col-md-6">
                         <button onClick={() => setShow(!show)} className="top10btn btn-primary">Top 10 Pokemon</button>
                     </div>
-                    <div className="col-md-6">
-                        <button className="top10btn btn-success">Charts and Graphs</button>
-                    </div>
-                    <div className="col-md-6">
-                        <button className="top10btn btn-warning">Pokemon Fun Facts</button>
-                    </div>
-                    <div className="col-md-6">
-                        <button className="top10btn btn-danger">The Pokemon Quiz</button>
-                    </div>
                 </div>
             </div>
             <div className="container container-fluid" style={{ display: (show ? 'inline-block' : 'none') }}>
-                <div className="row">
+                <div className="topList row">
                     <TopTenList pkmnList={hp} title="by HP" />
                     <TopTenList pkmnList={fastest} title="by Speed" />
                     <TopTenList pkmnList={strongest} title="by Attack" />
@@ -43,3 +35,11 @@ const TopTens = () => {
 }
 
 export default TopTens;
+
+/* 
+<div className="col-md-6">
+    <button className="top10btn btn-warning">Pokemon Fun Facts</button>
+    </div>
+    <div className="col-md-6">
+    <button className="top10btn btn-danger">The Pokemon Quiz</button>
+</div> */
