@@ -15,11 +15,11 @@ const TypesChart = () => {
             labels: typesList,
             datasets: [
                 {
-                    label: `Number of Pokemon By Type ${typeNum}`,
+                    label: `Number of Pokemon by Type ${typeNum}`,
                     data: typesData,
                     backgroundColor: colours,
-                    borderWidth: 1,
-                    borderColor: 'black' 
+                    borderWidth: 3,
+                    borderColor: colours 
                 } 
             ]
         });
@@ -30,11 +30,11 @@ const TypesChart = () => {
             labels: typesList,
             datasets: [
                 {
-                    label: `Number of Pokemon By Type ${typeNum}`,
+                    label: `Number of Pokemon by Type ${typeNum}`,
                     data: typesData,
                     backgroundColor: colours,
-                    borderWidth: 1,
-                    borderColor: 'black' 
+                    borderWidth: 3,
+                    borderColor: colours 
                 } 
             ]
         });

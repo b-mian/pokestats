@@ -6,13 +6,15 @@ import non_legendary from '../data/top_10_non_legendary.json';
 import legendary from '../data/top_10_legendary.json';
 import TopTenList from './top_ten_list.js';
 import TypesChart from './types_charts.js';
-import {useState} from 'react';
+import { useState } from 'react';
+import {useSpring, animated} from 'react-spring';
 
 
 
 const Master = () => {
     const [showLists, setShowLists] = useState(false);
     const [showTypeCharts, setShowTypeCharts] = useState(false);
+    const props = useSpring({opacity: 1, from: {opacity: 0}})
     return (
         <div className="main-div">
             <div className="container container-fluid">
@@ -25,16 +27,22 @@ const Master = () => {
                     </div>
                 </div>
             </div>
-            <div className="container container-fluid" style={{ display: (showLists ? 'inline-block' : 'none') }}>
-                <div className="topList row">
-                    <TopTenList pkmnList={hp} title="by HP" />
-                    <TopTenList pkmnList={fastest} title="by Speed" />
-                    <TopTenList pkmnList={strongest} title="by Attack" />
-                    <TopTenList pkmnList={defense} title="by Defense" />
-                    <TopTenList pkmnList={legendary} title="Legendary" />
-                    <TopTenList pkmnList={non_legendary} title="Non-Legendary" />
-                </div>    
-            </div>
+            
+                
+            <animated.div style={props}>
+                <div className="container container-fluid" style={{ display: (showLists ? 'inline-block' : 'none') }}>
+                    <div className="topList row">
+                        <TopTenList pkmnList={hp} title="by HP" />
+                        <TopTenList pkmnList={fastest} title="by Speed" />
+                        <TopTenList pkmnList={strongest} title="by Attack" />
+                        <TopTenList pkmnList={defense} title="by Defense" />
+                        <TopTenList pkmnList={legendary} title="Legendary" />
+                        <TopTenList pkmnList={non_legendary} title="Non-Legendary" />
+                    </div>    
+                </div>
+            </animated.div>
+               
+           
             <div className="graphs container container-fluid" style={{ display: (showTypeCharts ? 'inline-block' : 'none') }}>
                 <TypesChart /> 
             </div>
@@ -51,3 +59,5 @@ export default Master;
     <div className="col-md-6">
     <button className="top10btn btn-danger">The Pokemon Quiz</button>
 </div> */
+
+/*  */

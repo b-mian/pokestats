@@ -23,6 +23,7 @@
 
 body {
   font-family: "Quicksand", sans-serif;
+  background-color:lightblue;
 }
 
 
@@ -75,6 +76,18 @@ table {
   text-align: center;
 }
 
+/* .fadeIn, .fadeOut {
+  opacity: 0;
+  -moz-transition: opacity 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.fadeIn {
+  opacity: 1;
+}
+ */
 
 
 
