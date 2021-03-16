@@ -7,57 +7,72 @@ import legendary from '../data/top_10_legendary.json';
 import TopTenList from './top_ten_list.js';
 import TypesChart from './types_charts.js';
 import { useState } from 'react';
-import {useSpring, animated} from 'react-spring';
+import {useSpring, animated, config} from 'react-spring';
+
 
 
 
 const Master = () => {
     const [showLists, setShowLists] = useState(false);
     const [showTypeCharts, setShowTypeCharts] = useState(false);
-    const props = useSpring({opacity: 1, from: {opacity: 0}})
+    const fadeLists = useSpring(
+        {display: showLists ? 'inline-block' : 'none'}
+    );
+    const fadeCharts = useSpring( 
+        {display: showTypeCharts ? 'inline-block' : 'none'}
+    );
+    let listEvent = () => {
+        setShowLists(!showLists);
+        setShowTypeCharts(showTypeCharts ? !showTypeCharts : showTypeCharts);
+    }
+    let chartEvent = () => {
+        setShowTypeCharts(!showTypeCharts);
+        setShowLists(showLists ? !showLists : showLists);
+    }
+    
     return (
         <div className="main-div">
             <div className="container container-fluid">
                 <div className="row">
                     <div className="col-md-6 col-xs-12">
-                        <button onClick={() => setShowLists(!showLists)} className="top10btn btn-primary">Top 10 Pokemon</button>
+                        <button onClick={listEvent} className="top10btn btn-primary">Top 10 Pokemon</button>
                     </div>
                     <div className="col-md-6 col-xs-12">
-                        <button onClick={() => setShowTypeCharts(!showTypeCharts)} className="chartbtn btn-success">Charts and Graphs</button>
+                        <button onClick={chartEvent} className="chartbtn btn-success">Charts and Graphs</button>
                     </div>
+                    
+                    <div className="col-md-6 col-xs-12">
+                        <button className="top10btn btn-warning">Pokemon Fun Facts</button>
+                    </div>
+                    <div className="col-md-6 col-xs-12">
+                        <button className="top10btn btn-danger">The Pokemon Quiz</button>
+                    </div> 
                 </div>
             </div>
             
                 
-            <animated.div style={props}>
-                <div className="container container-fluid" style={{ display: (showLists ? 'inline-block' : 'none') }}>
-                    <div className="topList row">
-                        <TopTenList pkmnList={hp} title="by HP" />
-                        <TopTenList pkmnList={fastest} title="by Speed" />
-                        <TopTenList pkmnList={strongest} title="by Attack" />
-                        <TopTenList pkmnList={defense} title="by Defense" />
-                        <TopTenList pkmnList={legendary} title="Legendary" />
-                        <TopTenList pkmnList={non_legendary} title="Non-Legendary" />
-                    </div>    
+            
+            <animated.div style={fadeLists} className="lists container container-fluid" >
+                <div className="topList row">
+                    <TopTenList pkmnList={hp} title="by HP" />
+                    <TopTenList pkmnList={fastest} title="by Speed" />
+                    <TopTenList pkmnList={strongest} title="by Attack" />
+                    <TopTenList pkmnList={defense} title="by Defense" />
+                    <TopTenList pkmnList={legendary} title="Legendary" />
+                    <TopTenList pkmnList={non_legendary} title="Non-Legendary" />  
                 </div>
             </animated.div>
-               
-           
-            <div className="graphs container container-fluid" style={{ display: (showTypeCharts ? 'inline-block' : 'none') }}>
+            <animated.div style={fadeCharts} className="graphs container container-fluid" >
                 <TypesChart /> 
-            </div>
+            </animated.div>
+            
+           
         </div>
     )
 }
 
 export default Master;
 
-/* 
-<div className="col-md-6">
-    <button className="top10btn btn-warning">Pokemon Fun Facts</button>
-    </div>
-    <div className="col-md-6">
-    <button className="top10btn btn-danger">The Pokemon Quiz</button>
-</div> */
+
 
 /*  */

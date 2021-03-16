@@ -74,20 +74,9 @@ table {
   border-radius: 10px;
   font-size: 2.25rem;
   text-align: center;
+  color: white;
 }
 
-/* .fadeIn, .fadeOut {
-  opacity: 0;
-  -moz-transition: opacity 0.4s ease-in-out;
-  -o-transition: opacity 0.4s ease-in-out;
-  -webkit-transition: opacity 0.4s ease-in-out;
-  transition: opacity 0.4s ease-in-out;
-}
-
-.fadeIn {
-  opacity: 1;
-}
- */
 
 
 
