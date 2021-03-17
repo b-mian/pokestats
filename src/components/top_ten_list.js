@@ -2,13 +2,13 @@ function headings(pkmnData) {
     let pkmn = [];
     for (let i=0; i<pkmnData.length; i++) {
         pkmn.push(    
-                        <tr>
-                            <td className="pkmn-images">
-                                <img alt="pkmn" className="pokemon-images" src={`/images/icons/${pkmnData[i][1]}.png`}></img>
-                            </td>
-                            <td className="pkmn-name">{pkmnData[i][0]}</td>
-                            <td className="pkmn-stat">{pkmnData[i][2]}</td>
-                        </tr>
+                <tr>
+                    <td className="pkmn-images">
+                        <img alt="pkmn" className="pokemon-images" src={`/images/icons/${pkmnData[i][1]}.png`}></img>
+                    </td>
+                    <td className="pkmn-name">{pkmnData[i][0]}</td>
+                    <td className="pkmn-stat">{pkmnData[i][2]}</td>
+                </tr>
         );            
     }
     return pkmn;
@@ -16,7 +16,7 @@ function headings(pkmnData) {
 
 const TopTenList = ({pkmnList, title}) => {
     return ( 
-        <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+        <div className="topList">
             <h4 className="title">Top 10 {title}</h4>
             <ol>
                 {headings(pkmnList).map((value, index) => {

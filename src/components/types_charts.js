@@ -10,6 +10,11 @@ import { Bar } from 'react-chartjs-2';
 const TypesChart = () => {
     const [chart1Data, setChart1Data] = useState({});
     const [chart2Data, setChart2Data] = useState({});
+    let options = {
+        maintainAspectRatio: true,
+        width: 960,
+        height: 300
+    } 
     const chart1 = (typesList, typesData, typeNum) => {
         setChart1Data({
             labels: typesList,
@@ -19,9 +24,11 @@ const TypesChart = () => {
                     data: typesData,
                     backgroundColor: colours,
                     borderWidth: 3,
-                    borderColor: colours 
+                    borderColor: colours
+                    
                 } 
             ]
+            
         });
     }
 
@@ -37,6 +44,7 @@ const TypesChart = () => {
                     borderColor: colours 
                 } 
             ]
+            
         });
     }
 
@@ -47,8 +55,12 @@ const TypesChart = () => {
 
     return (
         <div className="chartsDiv">
-            <Bar data={chart1Data}></Bar>
-            <Bar data={chart2Data}></Bar>
+            <div className="chart">
+                <Bar data={chart1Data} options={options}></Bar>
+            </div>
+            <div className="chart">
+                <Bar data={chart2Data} ></Bar>
+            </div>
         </div>
     )
 }
