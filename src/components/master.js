@@ -8,6 +8,7 @@ import TopTenList from './top_ten_list.js';
 import TypesChart from './types_charts.js';
 import { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
+import GenCharts from './gen_charts';
 
 const Master = () => {
     const [showLists, setShowLists] = useState(false);
@@ -41,7 +42,7 @@ const Master = () => {
                     </div>
                 </div>
             </div>
-            <animated.div style={fadeLists} className="lists container-fluid" >
+            <animated.div style={fadeLists} className="lists container-fluid">
                 <div className="listRow row">
                     <div className="list">
                         <TopTenList pkmnList={hp} title="by HP" />
@@ -63,8 +64,9 @@ const Master = () => {
                     </div>
                 </div>
             </animated.div>
-            <animated.div style={fadeCharts} className="graphs container container-fluid" >
+            <animated.div style={fadeCharts} className="graphs container container-fluid">
                 <TypesChart /> 
+                <GenCharts />
             </animated.div>
         </div>
     )

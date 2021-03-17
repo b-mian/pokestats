@@ -10,10 +10,16 @@ import { Bar } from 'react-chartjs-2';
 const TypesChart = () => {
     const [chart1Data, setChart1Data] = useState({});
     const [chart2Data, setChart2Data] = useState({});
-    let options = {
-        maintainAspectRatio: true,
-        width: 960,
-        height: 300
+    let options = (num) => {
+        return {title: {
+            display: true,
+            text: `Number of Pokemon by Type ${num}`,
+            fontSize: 18
+        },
+        legend: {
+            display: true,
+            fillStyle: 'rgb(0,48,143,1.0)'
+        }}
     } 
     const chart1 = (typesList, typesData, typeNum) => {
         setChart1Data({
@@ -56,10 +62,10 @@ const TypesChart = () => {
     return (
         <div className="chartsDiv">
             <div className="chart">
-                <Bar data={chart1Data} options={options}></Bar>
+                <Bar data={chart1Data} options={options("1")}></Bar>
             </div>
             <div className="chart">
-                <Bar data={chart2Data} ></Bar>
+                <Bar data={chart2Data}  options={options("2")}></Bar>
             </div>
         </div>
     )
