@@ -36,9 +36,8 @@ const Master = () => {
                 <div className="row">
                     <div className="buttons">
                         <button onClick={listEvent} className="top10btn">Top 10 Pokemon</button>
-                        <button onClick={chartEvent} className="chartbtn">Charts and Graphs</button>
-                        <button className="factBtn">Pokemon Fun Facts</button>
-                        <button className="quizBtn">The Pokemon Quiz</button>
+                        <button onClick={chartEvent} className="chartbtn">Pokemon Charts</button>
+                        <button className="quizBtn">Pokemon Quiz</button>
                     </div>
                 </div>
             </div>
