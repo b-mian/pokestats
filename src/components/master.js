@@ -4,8 +4,10 @@ import hp from '../data/top_10_hp.json';
 import defense from '../data/top_10_defense.json';
 import non_legendary from '../data/top_10_non_legendary.json';
 import legendary from '../data/top_10_legendary.json';
+import pokedex_151 from '../data/pokedex_151.json';
 import TopTenList from './top_ten_list.js';
 import TypesChart from './types_charts.js';
+import Pokedex from './pokedex.js';
 import { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import GenCharts from './gen_charts';
@@ -32,12 +34,16 @@ const Master = () => {
     
     return (
         <div className="main-div">
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="buttons">
-                        <button onClick={listEvent} className="top10btn">Top 10 Pokemon</button>
-                        <button onClick={chartEvent} className="chartbtn">Pokemon Charts</button>
-                        <button className="quizBtn">Pokemon Quiz</button>
+            <div className="container-fluid buttons-container">
+                <div className="buttons-div">
+                    <button onClick={listEvent} className="top10btn col-lg-6 col-md-6 col-sm-12">Top 10 Pokemon</button>
+                    <button onClick={chartEvent} className="chartbtn col-lg-6 col-md-6 col-sm-12">Pokemon Charts</button>
+                </div>
+            </div>
+            <div className="pokedex151-container container-fluid">
+                <div className="pokedex151-row row">
+                    <div className="pokedex-element col-lg-3 col-md-3 col-sm-4">
+                        <Pokedex pkmn_list={pokedex_151} />
                     </div>
                 </div>
             </div>

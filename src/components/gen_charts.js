@@ -1,6 +1,5 @@
 import {useState, useEffect} from 'react';
 import { HorizontalBar } from 'react-chartjs-2';
-import colours from '../data/chart_colours.json';
 import gen1 from '../data/gen_data/gen_1.json';
 import gen2 from '../data/gen_data/gen_2.json';
 import gen3 from '../data/gen_data/gen_3.json';
