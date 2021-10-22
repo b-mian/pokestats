@@ -23,7 +23,8 @@
 
 body {
   font-family: "Helvetica";
-  background-color: tomato;
+  background-color: slategray;
+  overflow-x: hidden;
 }
 
 
@@ -31,10 +32,11 @@ body {
       JUMBOTRON ON HOMEPAGE
 **********************************/
 .jumbotron {
-  background-color: tomato;
+  background-color: slategray;
   width: 100vw;
   opacity: 0.9;
   display: flex;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .jumbotron h1 {
@@ -52,7 +54,10 @@ body {
 .jumbotron hr {
   background-color: rgb(235, 74, 34);
   border-width: 5px;
+  width: 80vw;
 }
+
+
 
 /*********************************
       POKEDEX ON HOME PAGE
@@ -66,11 +71,13 @@ body {
 .pokedex-list {
   display: inline-block;
   margin: 1vw 1vw;
+  padding-top: 25px;
   list-style-type: none;
   text-align: center;
   width: 250px;
   height: 250px;
   border-radius: 10px;
+  border: 2px solid tomato;
   background-color: azure;
 }
 
@@ -93,6 +100,27 @@ body {
   font-weight: bold;
 }
 
+.type1 {
+  display: inline-block;
+  background-color: tomato;
+  border: 2px solid black;
+  border-radius: 4px;
+  width: 60px !important;
+  margin-right: 10px;
+  color: white;
+  height: 25px !important;
+}
+
+.type2 {
+  display: inline-block;
+  background-color: skyblue;
+  border: 2px solid black;
+  border-radius: 4px;
+  width: 60px !important;
+ 
+  color: white;
+}
+
 
 /*********************************
       TOP TEN POKEMON LISTINGS
@@ -103,10 +131,12 @@ table {
 
 .pkmn-name {
   text-align: center;
+  font-weight: bold;
 }
 
-.pkmn_stat {
-  margin: 0 10px;
+.pkmn-stat {
+  text-align: center;
+  padding: 20px;
 }
 
 .main-div {
