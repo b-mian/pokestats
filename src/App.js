@@ -2,6 +2,7 @@
 import './App.css';
 import Jumbotron from './components/jumbotron';
 import Master from './components/master';
+import React from 'react';
 
 
 

@@ -1,3 +1,5 @@
+import React from 'react';
+
 function headings(pkmnData) {
     let pkmn = [];
     for (let i=0; i<pkmnData.length; i++) {

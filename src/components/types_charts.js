@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import React from 'react';
 import types from '../data/types.json';
 import types1_freq from '../data/types1_freq.json';
 import types2_freq from '../data/types2_freq.json';

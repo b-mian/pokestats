@@ -1,3 +1,4 @@
+import React from 'react';
 import fastest from '../data/top_10_speed.json';
 import strongest from '../data/top_10_attack.json';
 import hp from '../data/top_10_hp.json';
@@ -12,6 +13,7 @@ import { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import GenCharts from './gen_charts';
 import Search from './search';
+import ScrollButton from './scrollbutton';
 
 const Master = () => {
     const [showLists, setShowLists] = useState(false);
@@ -81,6 +83,9 @@ const Master = () => {
                 <div className="pokedex151-row row justify-content-center">
                     <Pokedex pkmn_list={pokedex_151}/>
                 </div>
+            </div>
+            <div>
+                <ScrollButton />
             </div>
         </div>
     )

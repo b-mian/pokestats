@@ -1,3 +1,4 @@
+import React from 'react';
 
 const Pokedex = ({pkmn_list}) => {
     function create_pokedex(pokemon) {

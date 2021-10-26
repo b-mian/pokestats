@@ -23,7 +23,7 @@
 
 body {
   font-family: "Helvetica";
-  background-color: slategray;
+  background-color: tomato;
   overflow-x: hidden;
 }
 
@@ -32,7 +32,7 @@ body {
       JUMBOTRON ON HOMEPAGE
 **********************************/
 .jumbotron {
-  background-color: slategray;
+  background-color: tomato;
   width: 100vw;
   opacity: 0.9;
   display: flex;
@@ -40,11 +40,11 @@ body {
 }
 
 .jumbotron h1 {
-  color: ghostwhite;
+  color: white;
 }
 
 .jumbotron h3 {
-  color: ghostwhite;
+  color: white;
   font-style: italic;
 }
 
@@ -73,7 +73,7 @@ body {
   width: 250px;
   height: 250px;
   border-radius: 10px;
-  border: 2px solid tomato;
+  border: 3px solid rgb(63, 35, 25);;
   background-color: azure;
 }
 
@@ -159,16 +159,12 @@ table {
 }
 
 
-.top10btn {
-  background-color: rgba(54, 162, 235, 1);
-}
-
-.chartbtn {
-  background-color: rgb(221, 72, 72);
+.top10btn, .chartbtn {
+  background-color: rgb(58, 151, 108);
 }
 
 .quizBtn {
-  background-color: rgb(221, 72, 72);
+  background-color: rgb(27, 122, 78);
 }
 
 
@@ -176,7 +172,7 @@ table {
   background-color: ghostwhite;
   margin: 20px 0;
   border-radius: 12px;
-  border: 5px solid orangered;
+  border: 5px solid rgb(63, 35, 25);
 }
 
 
@@ -188,7 +184,7 @@ table {
   background-color: ghostwhite;
   margin: 20px auto;
   border-radius: 12px;
-  border: 5px solid orangered;
+  border: 5px solid rgb(54, 34, 26);
 }
 
 
@@ -221,6 +217,16 @@ th, td {
 }
 
 
+
+.scroll-top-button, .scroll-top-container {
+  position: fixed;
+  right: 26px;
+  bottom: 26px;
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  background-color: gainsboro;
+}
 
 @media screen and (min-width: 2863px) {
   
