@@ -68,20 +68,18 @@ const Master = () => {
                 <TypesChart /> 
                 <GenCharts />
             </animated.div>
-            <div>
-                <div className="search-pokedex container-fluid">
-                    <div className="row">
-                        <div className="col-lg-4 col-lg-offset-4">
-                            <Search listOfPokemon={pokedex_151} />
-                        </div>
+            
+            <div className="search-pokedex container-fluid mt-4">
+                <div className="row justify-content-center">
+                    <div className="col-lg-4 col-lg-offset-4">
+                        <Search listOfPokemon={pokedex_151} />
                     </div>
                 </div>
             </div>
-            <div className="container-fluid">
+           
+            <div className="pokedex151-container container-fluid">
                 <div className="pokedex151-row row">
-                    <div className="pokedex-element col-lg-3 col-md-3 col-sm-4">
-                        <Pokedex pkmn_list={pokedex_151}/>
-                    </div>
+                    <Pokedex pkmn_list={pokedex_151}/>
                 </div>
             </div>
         </div>

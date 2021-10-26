@@ -32,7 +32,7 @@ const Search = ({listOfPokemon}) => {
     }
 
     return (
-        <div>
+        <div className="col-sm-12">
             <form onSubmit={filterEvent} type="submit">
                 <div className="form-group">
                     <input type="search" className="form-control" id="searchPokemonInput" 
