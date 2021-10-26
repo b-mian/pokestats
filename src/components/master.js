@@ -36,9 +36,9 @@ const Master = () => {
     return (
         <div className="main-div">
             <div className="container-fluid buttons-container">
-                <div className="buttons-div">
-                    <button onClick={listEvent} className="top10btn col-lg-6 col-md-6 col-sm-12">Top 10 Pokemon</button>
-                    <button onClick={chartEvent} className="chartbtn col-lg-6 col-md-6 col-sm-12">Pokemon Charts</button>
+                <div className="buttons-div row justify-content-center">
+                    <button onClick={listEvent} className="top10btn col-xs-6 col-md-3">Top 10 Pokemon</button>
+                    <button onClick={chartEvent} className="chartbtn col-xs-6 col-md-3 offset-md-2">Pokemon Charts</button>
                 </div>
             </div>
             
@@ -78,7 +78,7 @@ const Master = () => {
             </div>
            
             <div className="pokedex151-container container-fluid">
-                <div className="pokedex151-row row">
+                <div className="pokedex151-row row justify-content-center">
                     <Pokedex pkmn_list={pokedex_151}/>
                 </div>
             </div>

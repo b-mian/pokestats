@@ -2,9 +2,13 @@ const Jumbotron = () => {
     return (
         <div className="jumbotron jumbotron-fluid">
             <div className="container-fluid">
-                <h1>PokeStats</h1>
-                <h3>Pokemon by the numbers</h3>
-                <hr></hr>
+                <div className="row justify-content-center">
+                    <h1 className="col-xs-12">PokeStats</h1>
+                </div>
+                <div className="row justify-content-center">
+                    <h3 className="col-xs-12">Pokemon by numbers</h3>
+                </div>
+                <hr className="col-xs-12"></hr>
             </div>
         </div>
     );

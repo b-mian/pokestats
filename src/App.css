@@ -41,13 +41,10 @@ body {
 
 .jumbotron h1 {
   color: ghostwhite;
-  font-size: 6rem;
 }
 
 .jumbotron h3 {
   color: ghostwhite;
-  font-size: 2.5rem;
-  text-align: center;
   font-style: italic;
 }
 
@@ -150,8 +147,8 @@ table {
 
 .top10btn, .chartbtn, .quizBtn {
   display: inline-block;
-  margin: 25px 25px;
-  width: 360px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   height: 100px;
   border-radius: 12px;
   border: none;
@@ -182,13 +179,6 @@ table {
   border: 5px solid orangered;
 }
 
-.buttons-div {
-  width: 100%;
-}
-
-.buttons-container {
-  width: 100vw;
-}
 
 .list {
   display: flex;
