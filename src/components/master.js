@@ -25,12 +25,12 @@ const Master = () => {
         {display: showTypeCharts ? 'inline-block' : 'none'}
     );
     let listEvent = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         setShowLists(!showLists);
         setShowTypeCharts(showTypeCharts ? !showTypeCharts : showTypeCharts);
     }
     let chartEvent = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         setShowTypeCharts(!showTypeCharts);
         setShowLists(showLists ? !showLists : showLists);
     }
@@ -39,8 +39,8 @@ const Master = () => {
         <div className="main-div">
             <div className="container-fluid buttons-container">
                 <div className="buttons-div row justify-content-center">
-                    <button onClick={listEvent} className="top10btn col-xs-6 col-md-3">Top 10 Pokemon</button>
-                    <button onClick={chartEvent} className="chartbtn col-xs-6 col-md-3 offset-md-2">Pokemon Charts</button>
+                    <button onClick={listEvent} className="top10btn col-sm-4 col-md-3">Top 10 Pokemon</button>
+                    <button onClick={chartEvent} className="chartbtn col-sm-4 col-md-3 offset-md-2 offset-sm-2">Pokemon Charts</button>
                 </div>
             </div>
             
@@ -95,4 +95,3 @@ export default Master;
 
 
 
-/*  */

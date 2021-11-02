@@ -23,7 +23,7 @@
 
 body {
   font-family: "Helvetica";
-  background-color: tomato;
+  background-color: ghostwhite;
   overflow-x: hidden;
 }
 
@@ -32,7 +32,7 @@ body {
       JUMBOTRON ON HOMEPAGE
 **********************************/
 .jumbotron {
-  background-color: tomato;
+  background-color: darkslategray;
   width: 100vw;
   opacity: 0.9;
   display: flex;
@@ -49,7 +49,7 @@ body {
 }
 
 .jumbotron hr {
-  background-color: rgb(235, 74, 34);
+  background-color: tomato;
   border-width: 5px;
   width: 80vw;
 }
@@ -104,7 +104,7 @@ body {
   width: 60px !important;
   margin-right: 10px;
   color: white;
-  height: 25px !important;
+  height: 27px !important;
 }
 
 .type2 {
@@ -160,7 +160,13 @@ table {
 
 
 .top10btn, .chartbtn {
-  background-color: rgb(58, 151, 108);
+  background-color: darkslategray;
+  opacity: 0.9;
+}
+
+.top10btn:hover, .chartbtn:hover {
+  background-color: lightslategrey;
+  opacity: 1.0;
 }
 
 .quizBtn {
