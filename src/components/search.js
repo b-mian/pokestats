@@ -8,6 +8,7 @@ const Search = ({listOfPokemon}) => {
     const isAppearing = useSpring(
         {display: showPokemon ? 'inline-block' : 'none'},
     );
+    
     const handleSearch = (event) => {
         setSearch(event.target.value);
     };
@@ -15,21 +16,24 @@ const Search = ({listOfPokemon}) => {
         let pokemonNames = document.getElementsByClassName('pokemon-name');
         let pokemonType1 = document.getElementsByClassName('type1');
         let pokemonType2 = document.getElementsByClassName('type2');
-        let pokemonDivs = document.getElementsByClassName('pokedex-list');
+        let pokemonDivs = document.getElementsByClassName('pkmn-div');
         e.preventDefault();
         for (let i=0;i<pokemonNames.length;i++) {
-            if (pokemonNames[i].innerText.toLowerCase().includes(search.toLowerCase()) || 
-                pokemonType1[i].innerText.toLowerCase().includes(search.toLowerCase()) ||
-                pokemonType2[i].innerText.toLowerCase().includes(search.toLowerCase())) 
+            if ( pokemonNames[i].innerText.toLowerCase().includes(search.toLowerCase()) || 
+                 pokemonType1[i].innerText.toLowerCase().includes(search.toLowerCase()) ||
+                 pokemonType2[i].innerText.toLowerCase().includes(search.toLowerCase()) &&
+                 (search != " ") && (search != null)) 
             {
                 setShowPokemon(!showPokemon);
                 pokemonDivs[i].style = isAppearing;
             }
             else {
                 pokemonDivs[i].style.display = 'none';
+
             }
         }
     }
+
 
     return (
         <div className="col-sm-12">

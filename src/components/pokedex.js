@@ -39,7 +39,7 @@ const Pokedex = ({pkmn_list}) => {
     return ( 
         <div className="pokedex151-element">
             {create_pokedex(pkmn_list).map((value, index) => {
-                    return <span key={index}>{value}</span>
+                    return <span className="pkmn-div" key={index}>{value}</span>
             })} 
         </div>
     )

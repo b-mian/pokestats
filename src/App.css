@@ -166,6 +166,7 @@ table {
 
 .top10btn:hover, .chartbtn:hover {
   background-color: lightslategrey;
+  color: white;
   opacity: 1.0;
 }
 
@@ -222,8 +223,6 @@ th, td {
   margin: 0 auto;
 }
 
-
-
 .scroll-top-button, .scroll-top-container {
   position: fixed;
   right: 26px;
@@ -232,6 +231,11 @@ th, td {
   height: 40px;
   border-radius: 6px;
   background-color: gainsboro;
+}
+
+.nav-direction {
+  color: darkslategray;
+  font-weight: bold;
 }
 
 @media screen and (min-width: 2863px) {

@@ -14,6 +14,7 @@ import { useSpring, animated } from 'react-spring';
 import GenCharts from './gen_charts';
 import Search from './search';
 import ScrollButton from './scrollbutton';
+import Paginate from './paginate';
 
 const Master = () => {
     const [showLists, setShowLists] = useState(false);
@@ -82,6 +83,11 @@ const Master = () => {
             <div className="pokedex151-container container-fluid">
                 <div className="pokedex151-row row justify-content-center">
                     <Pokedex pkmn_list={pokedex_151}/>
+                </div>
+            </div>
+            <div className="pagination-container container-fluid">
+                <div className="row justify-content-center">
+                    <Paginate />
                 </div>
             </div>
             <div>
