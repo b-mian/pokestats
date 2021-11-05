@@ -5,7 +5,7 @@ import hp from '../data/top_10_hp.json';
 import defense from '../data/top_10_defense.json';
 import non_legendary from '../data/top_10_non_legendary.json';
 import legendary from '../data/top_10_legendary.json';
-import pokedex_151 from '../data/pokedex_151.json';
+import pokedex from '../data/pokedex.json';
 import TopTenList from './top_ten_list.js';
 import TypesChart from './types_charts.js';
 import Pokedex from './pokedex.js';
@@ -75,14 +75,14 @@ const Master = () => {
             <div className="search-pokedex container-fluid mt-4">
                 <div className="row justify-content-center">
                     <div className="col-lg-4 col-lg-offset-4">
-                        <Search listOfPokemon={pokedex_151} />
+                        <Search />
                     </div>
                 </div>
             </div>
            
             <div className="pokedex151-container container-fluid">
                 <div className="pokedex151-row row justify-content-center">
-                    <Pokedex pkmn_list={pokedex_151}/>
+                    <Pokedex pkmn_list={pokedex}/>
                 </div>
             </div>
             <div className="pagination-container container-fluid">

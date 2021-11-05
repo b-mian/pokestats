@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useSpring } from 'react-spring';
 
-const Search = ({listOfPokemon}) => {
+const Search = () => {
     const [search, setSearch] = useState("");
     const [showPokemon, setShowPokemon] = useState(false);
     const isAppearing = useSpring(
@@ -18,11 +18,14 @@ const Search = ({listOfPokemon}) => {
         let pokemonType2 = document.getElementsByClassName('type2');
         let pokemonDivs = document.getElementsByClassName('pkmn-div');
         e.preventDefault();
+        if ((search === "")) {
+            return;
+        }
         for (let i=0;i<pokemonNames.length;i++) {
             if ( pokemonNames[i].innerText.toLowerCase().includes(search.toLowerCase()) || 
                  pokemonType1[i].innerText.toLowerCase().includes(search.toLowerCase()) ||
                  pokemonType2[i].innerText.toLowerCase().includes(search.toLowerCase()) &&
-                 (search != " ") && (search != null)) 
+                 ((search != " ") && (search !== null))) 
             {
                 setShowPokemon(!showPokemon);
                 pokemonDivs[i].style = isAppearing;

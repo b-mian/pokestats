@@ -9,8 +9,15 @@ const Paginate = () => {
     let pokedexList = document.getElementsByClassName("pkmn-div");
     function paginatePokemon() {
         let identifier = 1;
+        const breakPoints = [24,48,72,96,120,144,168,192,216,240,264,288,312,336,360,384,408,432,456,480,504,528,552,576,600,624,648,672,696,720,744]
         for (let i=0;i<pokedexList.length;i++) {
-            switch(tracker) {
+            for (let j=0; j<breakPoints.length;j++) {
+                if (breakPoints[j] === i) {
+                    identifier+=1;
+                }
+                
+            }
+            /* switch(tracker) {
                 case 24:
                     identifier+=1;
                     break;
@@ -34,7 +41,7 @@ const Paginate = () => {
                     break;
                 default:
                     break;
-            }
+            } */
             tracker += 1;
             pokedexList[i].className += " " + String(identifier);
             
@@ -46,7 +53,7 @@ const Paginate = () => {
 
     function showOrHide() {
         for (let i=0;i<pokedexList.length;i++) {
-            if ((pokedexList[i].className.includes(String(pageNum)) === false)) {
+            if (pokedexList[i].className !== "pkmn-div " + String(pageNum)) {
                 pokedexList[i].style.display = "none";
             }
             else {
@@ -65,7 +72,7 @@ const Paginate = () => {
     const handleNext = (e) => {
         e.preventDefault();
         
-        if (pageNum >= 7) {
+        if (pageNum >= 31) {
             return;
         }
         else {

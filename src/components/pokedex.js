@@ -21,6 +21,9 @@ const Pokedex = ({pkmn_list}) => {
         }
        
         for (let j = 0; j < master_list[0].length; j++) {
+            if (j >= 721) {
+                return pokemon_div;
+            }
             pokemon_div.push(
                 <ul className="pokedex-list">
                     <li><img alt={master_list[0][j]} className="pokedex-images" src={`/images/icons/${j+1}.png`}></img></li>
@@ -33,7 +36,6 @@ const Pokedex = ({pkmn_list}) => {
                 </ul>
             );
         }
-        return pokemon_div;
     }
     
     return ( 
