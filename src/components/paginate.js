@@ -1,13 +1,13 @@
 import React from "react";
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 
 
-
+let pageNum = 1;
+const pokedexList = document.getElementsByClassName("pkmn-div");
 const Paginate = () => {
-    let pageNum = 1;
-    const pokedexList = document.getElementsByClassName("pkmn-div");
-    const breakPoints = [24,48,72,96,120,144,168,192,216,240,264,288,312,336,360,384,408,432,456,480,504,528,552,576,600,624,648,672,696,720,744];
-    function paginatePokemon() {
+
+    const paginatePokemon = useCallback(() => {
+        const breakPoints = [24,48,72,96,120,144,168,192,216,240,264,288,312,336,360,384,408,432,456,480,504,528,552,576,600,624,648,672,696,720,744];
         let identifier = 1;
         for (let i=0;i<pokedexList.length;i++) {
             if (breakPoints.indexOf(i) !== -1) {
@@ -15,9 +15,9 @@ const Paginate = () => {
             }
             pokedexList[i].className += " " + String(identifier);
         } 
-    }
-
-    function showOrHide() {
+    },[]) 
+        
+    const showOrHide = useCallback(() => {
         for (let i=0;i<pokedexList.length;i++) {
             if (pokedexList[i].className !== ("pkmn-div " + String(pageNum))) {
                 pokedexList[i].style.display = "none";
@@ -27,12 +27,12 @@ const Paginate = () => {
             }
             
         }
-    }
+    },[])
 
     useEffect(() => {
         paginatePokemon();
         showOrHide();
-    }, [])
+    }, [paginatePokemon, showOrHide])
 
     const handleNext = (e) => {
         e.preventDefault();
