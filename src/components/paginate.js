@@ -9,13 +9,16 @@ const Paginate = () => {
     let pokedexList = document.getElementsByClassName("pkmn-div");
     function paginatePokemon() {
         let identifier = 1;
-        const breakPoints = [24,48,72,96,120,144,168,192,216,240,264,288,312,336,360,384,408,432,456,480,504,528,552,576,600,624,648,672,696,720,744]
+        const breakPoints = [24,48,72,96,120,144,168,192,216,240,264,288,312,336,360,384,408,432,456,480,504,528,552,576,600,624,648,672,696,720,744];
         for (let i=0;i<pokedexList.length;i++) {
-            for (let j=0; j<breakPoints.length;j++) {
+            /* for (let j=0; j<breakPoints.length;j++) {
                 if (breakPoints[j] === i) {
                     identifier+=1;
                 }
                 
+            } */
+            if (breakPoints.indexOf(i) !== -1) {
+                identifier+=1;
             }
             /* switch(tracker) {
                 case 24:
@@ -53,7 +56,7 @@ const Paginate = () => {
 
     function showOrHide() {
         for (let i=0;i<pokedexList.length;i++) {
-            if (pokedexList[i].className !== "pkmn-div " + String(pageNum)) {
+            if (pokedexList[i].className !== ("pkmn-div " + String(pageNum))) {
                 pokedexList[i].style.display = "none";
             }
             else {
@@ -66,8 +69,7 @@ const Paginate = () => {
     useEffect(() => {
         paginatePokemon();
         showOrHide();
-        
-    })
+    }, [])
 
     const handleNext = (e) => {
         e.preventDefault();
