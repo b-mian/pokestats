@@ -22,10 +22,10 @@ const Search = () => {
             return;
         }
         for (let i=0;i<pokemonNames.length;i++) {
-            if ( pokemonNames[i].innerText.toLowerCase().includes(search.toLowerCase()) || 
+            if ( (pokemonNames[i].innerText.toLowerCase().includes(search.toLowerCase()) || 
                  pokemonType1[i].innerText.toLowerCase().includes(search.toLowerCase()) ||
-                 pokemonType2[i].innerText.toLowerCase().includes(search.toLowerCase()) &&
-                 ((search != " ") && (search !== null))) 
+                 pokemonType2[i].innerText.toLowerCase().includes(search.toLowerCase())) &&
+                 ((search !== " ") && (search !== null))) 
             {
                 setShowPokemon(!showPokemon);
                 pokemonDivs[i].style = isAppearing;
