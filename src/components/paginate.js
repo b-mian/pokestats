@@ -7,11 +7,12 @@ const pokedexList = document.getElementsByClassName("pkmn-div");
 const Paginate = () => {
 
     const paginatePokemon = useCallback(() => {
-        const breakPoints = [24,48,72,96,120,144,168,192,216,240,264,288,312,336,360,384,408,432,456,480,504,528,552,576,600,624,648,672,696,720,744];
+        let maxShowing = 24;
         let identifier = 1;
         for (let i=0;i<pokedexList.length;i++) {
-            if (breakPoints.indexOf(i) !== -1) {
-                identifier+=1;
+            if (maxShowing === i) {
+                maxShowing += 24;
+                identifier += 1;
             }
             pokedexList[i].className += " " + String(identifier);
         } 
@@ -36,8 +37,8 @@ const Paginate = () => {
 
     const handleNext = (e) => {
         e.preventDefault();
-        
-        if (pageNum >= 31) {
+        const numPages = 31;
+        if (pageNum >= numPages) {
             return;
         }
         else {
