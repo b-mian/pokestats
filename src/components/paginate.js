@@ -66,15 +66,15 @@ const Paginate = () => {
                 <ul className="pagination input-group-append">
                     <li>
                         <button className="page-link previous-page" aria-label="Previous" onClick={handlePrevious}>
-                                <span aria-hidden="true">&laquo;</span>
+                                <span className="arrow" aria-hidden="true">&laquo;</span>
                                 <span className="sr-only">Previous</span>
-                                <span class="nav-direction">  BACK  </span>
+                                <span className="nav-direction">  BACK  </span>
                         </button>
                     </li>
                     <li>
                         <button className="page-link next-page" href="#" aria-label="Next" onClick={handleNext}>
-                            <span class="nav-direction">  NEXT  </span>
-                            <span aria-hidden="true">&raquo;</span>
+                            <span className="nav-direction">  NEXT  </span>
+                            <span className="arrow" aria-hidden="true">&raquo;</span>
                             <span className="sr-only">Next</span>
                         </button>
                     </li>

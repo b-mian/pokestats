@@ -32,7 +32,7 @@ body {
       JUMBOTRON ON HOMEPAGE
 **********************************/
 .jumbotron {
-  background-color: darkslategray;
+  background-color: rgb(43, 110, 199);
   width: 100vw;
   opacity: 0.9;
   display: flex;
@@ -160,12 +160,12 @@ table {
 
 
 .top10btn, .chartbtn {
-  background-color: darkslategray;
+  background-color: rgb(43, 110, 199);
   opacity: 0.9;
 }
 
 .top10btn:hover, .chartbtn:hover {
-  background-color: lightslategrey;
+  background-color: tomato;
   color: white;
   opacity: 1.0;
 }
@@ -234,8 +234,23 @@ th, td {
 }
 
 .nav-direction {
-  color: darkslategray;
-  font-weight: bold;
+  color: rgb(34, 32, 32);
+  font-weight: bolder;
+}
+
+.page-link {
+  background-color: tomato;
+  color: white !important;
+}
+
+.page-link:hover {
+  color: black;
+  background-color: rgb(192, 75, 54);
+}
+
+.arrow {
+  color: black !important;
+  font-weight: bold !important;
 }
 
 @media screen and (min-width: 2863px) {
