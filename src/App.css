@@ -32,20 +32,24 @@ body {
       JUMBOTRON ON HOMEPAGE
 **********************************/
 .jumbotron {
-  background-color: rgb(43, 110, 199);
+  background-color: darkslategrey;
   width: 100vw;
+  height: 40vh;
   opacity: 0.9;
   display: flex;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Varela Round', sans-serif;
+  
 }
 
 .jumbotron h1 {
   color: white;
+  font-size: 6rem;
 }
 
 .jumbotron h3 {
   color: white;
   font-style: italic;
+  font-size: 4rem;
 }
 
 .jumbotron hr {
@@ -98,22 +102,23 @@ body {
 
 .type1 {
   display: inline-block;
-  background-color: tomato;
+  background-color: darkslategray;
   border: 2px solid black;
   border-radius: 4px;
-  width: 60px !important;
+  width: 65px !important;
   margin-right: 10px;
+  font-weight: bold;
   color: white;
   height: 27px !important;
 }
 
 .type2 {
   display: inline-block;
-  background-color: skyblue;
+  background-color: rgb(1, 130, 133);
   border: 2px solid black;
   border-radius: 4px;
-  width: 60px !important;
- 
+  width: 65px !important;
+  font-weight: bold;
   color: white;
 }
 
@@ -160,20 +165,14 @@ table {
 
 
 .top10btn, .chartbtn {
-  background-color: rgb(43, 110, 199);
-  opacity: 0.9;
+  background-color: darkslategray;
+  opacity: 0.8;
 }
 
 .top10btn:hover, .chartbtn:hover {
-  background-color: tomato;
-  color: white;
+  color: rgb(129, 179, 129);
   opacity: 1.0;
 }
-
-.quizBtn {
-  background-color: rgb(27, 122, 78);
-}
-
 
 .chart {
   background-color: ghostwhite;
@@ -234,23 +233,25 @@ th, td {
 }
 
 .nav-direction {
-  color: rgb(34, 32, 32);
+  color: white;
   font-weight: bolder;
 }
 
 .page-link {
-  background-color: tomato;
-  color: white !important;
+  background-color: darkslategray;
+  color: white;
+  border-radius: 10px;
+  margin: 0 5px 0 5px;
 }
 
 .page-link:hover {
-  color: black;
-  background-color: rgb(192, 75, 54);
+  color: rgb(129, 179, 129);
+  background-color: rgb(13, 24, 24);
 }
 
 .arrow {
-  color: black !important;
-  font-weight: bold !important;
+  color: whitesmoke !important;
+  font-weight: bolder !important;
 }
 
 @media screen and (min-width: 2863px) {
