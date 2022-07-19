@@ -1,10 +1,14 @@
 import React from 'react';
+
+
 const Jumbotron = () => {
     return (
         <div className="jumbotron jumbotron-fluid">
             <div className="container-fluid">
                 <div className="row justify-content-center">
-                    <h1 className="col-xs-12">PokeStats</h1>
+                    <span className="col-xs-2"><img className="pokeball" src={`/images/pokeball-img.png`} alt="pokeball"></img></span>
+                    <h1 className="col-xs-6">PokeStats</h1>
+                    <span className="col-xs-2"><img className="pokeball pokeball-2" src={`/images/pokeball-img.png`} alt="pokeball"></img></span>
                 </div>
                 <hr className="col-xs-12"></hr>
                 <div className="row justify-content-center">
