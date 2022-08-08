@@ -103,7 +103,7 @@ const GenCharts = () => {
     return (
         <div className="chartsDiv">
             <div className="chart">
-                <HorizontalBar data={chartData} options={options}></HorizontalBar>
+                <HorizontalBar className="bar-chart" data={chartData} options={options}></HorizontalBar>
             </div>
         </div>
     )

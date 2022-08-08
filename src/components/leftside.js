@@ -45,10 +45,8 @@ const LeftSide = () => {
     return (
         <animated.div style={growPane} className="left-pane-container container-fluid">
             <div className="buttons-container">
-                
                 <button onClick={listEvent} className="top10btn">Top 10 Lists</button>
                 <button onClick={chartEvent} className="chartbtn">Chart Data</button>
-
             </div>  
             <animated.div style={fadeLists} className="lists container-fluid">
                 <div className="listRow row">
@@ -60,7 +58,6 @@ const LeftSide = () => {
                     <TopTenList pkmnList={non_legendary} title="Non-Legendary" />
                 </div>
             </animated.div>
-            
             <animated.div style={fadeCharts} className="graphs container-fluid">
                 <TypesChart /> 
                 <GenCharts />
@@ -68,7 +65,6 @@ const LeftSide = () => {
             <div>
                 <ScrollButton />
             </div>
-  
         </animated.div>
 
         

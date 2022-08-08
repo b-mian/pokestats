@@ -63,10 +63,10 @@ const TypesChart = () => {
     return (
         <div className="chartsDiv">
             <div className="chart">
-                <Bar data={chart1Data} options={options("1")}></Bar>
+                <Bar className="bar-chart" data={chart1Data} options={options("1")}></Bar>
             </div>
             <div className="chart">
-                <Bar data={chart2Data}  options={options("2")}></Bar>
+                <Bar className="bar-chart" data={chart2Data}  options={options("2")}></Bar>
             </div>
         </div>
     )

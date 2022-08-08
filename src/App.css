@@ -311,7 +311,7 @@ tr, th, td {
     .top10btn, .chartbtn {
       font-size: 14px;
       height: 50px;
-      width: 75%;
+      width: 100%;
       margin: 25px 0;
     }
 
@@ -322,7 +322,7 @@ tr, th, td {
     .chart {
       display: block;
       width: 90vw;
-      margin: 25px a0;
+      margin: 25px 0;
     }
 
     .graphs {
@@ -335,7 +335,7 @@ tr, th, td {
 @media screen and (max-width: 480px) {
 
   .jumbotron {
-    height: 30vh;
+    height: auto;
   }
 
   .jumbotron h1 {
@@ -347,8 +347,10 @@ tr, th, td {
   }
 
   .top10btn, .chartbtn {
-    width: 90%;
+    width: 100%;
     font-size: 12px;
   }
+
+  
 
 }
