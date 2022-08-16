@@ -12,15 +12,18 @@ const TypesChart = () => {
     const [chart1Data, setChart1Data] = useState({});
     const [chart2Data, setChart2Data] = useState({});
     let options = (num) => {
-        return {title: {
-            display: true,
-            text: `Number of Pokemon by Type ${num}`,
-            fontSize: 18
-        },
-        legend: {
-            display: true,
-            fillStyle: 'rgb(0,48,143,1.0)'
-        }}
+        return {
+            title: {
+                display: true,
+                text: `Number of Pokemon by Type ${num}`,
+                fontSize: 18
+            },
+            maintainAspectRatio: false,
+            legend: {
+                display: true,
+                fillStyle: 'rgb(0,48,143,1.0)'
+            }
+        }
     } 
     const chart1 = (typesList, typesData, typeNum) => {
         setChart1Data({

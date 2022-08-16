@@ -200,10 +200,10 @@ body {
   padding: 0;
 }
 
-.chart {
+.chart, .bar-chart {
   background-color: ghostwhite;
   width: 50vw;
-  height: auto;
+  height: 450px;
   margin: 20px auto;
   border-radius: 12px;
   border: 5px solid rgb(63, 35, 25);
@@ -283,9 +283,9 @@ tr, th, td {
 }
 
 @media screen and (max-width: 1368px) {
-  .chart {
+  .chart, .bar-chart {
     display: block;
-    width: 60vw;
+    width: 90vw;
     margin: 25px auto;
   }
 
@@ -319,7 +319,7 @@ tr, th, td {
       display: block;
     }
 
-    .chart {
+    .chart, .bar-chart {
       display: block;
       width: 90vw;
       margin: 25px 0;

@@ -11,8 +11,8 @@ import labels from '../data/gen_data/labels.json';
 
 const GenCharts = () => {
     const [chartData, setChartData] = useState({});
-
     const options = {
+        maintainAspectRatio: false,
         scales: {
             xAxes: [{
                 ticks: {
@@ -36,6 +36,7 @@ const GenCharts = () => {
         legend: {
             display: true
         }
+
        
     }
     const gen_chart = (chartLabels) => {
