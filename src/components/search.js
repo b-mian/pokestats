@@ -43,7 +43,7 @@ const Search = () => {
             <form onSubmit={filterEvent} type="submit">
                 <div className="form-group">
                     <input type="search" className="form-control" id="searchPokemonInput" 
-                        placeholder="Search Pokedex..." onChange={handleSearch}>
+                        placeholder="Search Pokédex..." onChange={handleSearch}>
                     </input>
                 </div>
             </form>

@@ -17,7 +17,6 @@ const LeftPane = styled.div`
     background-color: rgb(238, 22, 22, 1);
     opacity: 1;
     z-index: 10;
-    height: auto;
 `;
 
 const RightPane = styled.div`

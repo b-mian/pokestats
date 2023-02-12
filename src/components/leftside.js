@@ -45,8 +45,9 @@ const LeftSide = () => {
     return (
         <animated.div style={growPane} className="left-pane-container container-fluid">
             <div className="buttons-container">
-                <button onClick={listEvent} className="top10btn">Top 10 Lists</button>
-                <button onClick={chartEvent} className="chartbtn">Chart Data</button>
+                <button onClick={listEvent} className="top10btn">Top Tens</button>
+                <button onClick={chartEvent} className="chartbtn">Poké Charts</button>
+                {/* <button className="chartbtn">Poke Quiz</button> */}
             </div>  
             <animated.div style={fadeLists} className="lists container-fluid">
                 <div className="listRow row">

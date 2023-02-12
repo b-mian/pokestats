@@ -1,0 +1,102 @@
+[
+    {
+        "question": "Which of these Pokemon has the highest attack?",
+        "options": {
+            "A": "Charizard",
+            "B": "Mewtwo",
+            "C": "Steelix",
+            "D": "Empoleon"
+        },
+        "correct": "Mewtwo"
+    },
+    {
+        "question": "Which of these Pokemon has the highest defense?",
+        "options": {
+            "A": "Rayquaza",
+            "B": "Blissey",
+            "C": "Steelix",
+            "D": "Empoleon"
+        },
+        "correct": "Blissey"
+    },
+    {
+        "question": "Which of these Pokemon is the fastest?",
+        "options": {
+            "A": "Pidgeot",
+            "B": "Blastoise",
+            "C": "Scizor",
+            "D": "Fearow"
+        },
+        "correct": "Scizor"
+    },
+    {
+        "question": "Which Pokemon has the highest defense stat?",
+        "options": {
+            "A": "Rayquaza",
+            "B": "Blissey",
+            "C": "Steelix",
+            "D": "Empoleon"
+        },
+        "correct": "Blissey"
+    },
+    {
+        "question": "Which Pokemon has the highest defense stat?",
+        "options": {
+            "A": "Rayquaza",
+            "B": "Blissey",
+            "C": "Steelix",
+            "D": "Empoleon"
+        },
+        "correct": "Blissey"
+    },
+    {
+        "question": "Which Pokemon has the highest defense stat?",
+        "options": {
+            "A": "Rayquaza",
+            "B": "Blissey",
+            "C": "Steelix",
+            "D": "Empoleon"
+        },
+        "correct": "Blissey"
+    },
+    {
+        "question": "Which Pokemon has the highest defense stat?",
+        "options": {
+            "A": "Rayquaza",
+            "B": "Blissey",
+            "C": "Steelix",
+            "D": "Empoleon"
+        },
+        "correct": "Blissey"
+    },
+    {
+        "question": "Which Pokemon has the highest defense stat?",
+        "options": {
+            "A": "Rayquaza",
+            "B": "Blissey",
+            "C": "Steelix",
+            "D": "Empoleon"
+        },
+        "correct": "Blissey"
+    },
+    {
+        "question": "Which Pokemon has the highest defense stat?",
+        "options": {
+            "A": "Rayquaza",
+            "B": "Blissey",
+            "C": "Steelix",
+            "D": "Empoleon"
+        },
+        "correct": "Blissey"
+    },
+    {
+        "question": "Which Pokemon has the highest defense stat?",
+        "options": {
+            "A": "Rayquaza",
+            "B": "Blissey",
+            "C": "Steelix",
+            "D": "Empoleon"
+        },
+        "correct": "Blissey"
+    }
+]

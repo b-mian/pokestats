@@ -182,15 +182,16 @@ body {
   font-weight: bold;
   text-align: center;
   color: ghostwhite;
-  background-color: rgb(54, 140, 197);
+  background-color: rgb(1, 130, 133);
   opacity: 1;
   font-family: 'Varela Round', sans-serif;
+  letter-spacing: 2px;
   width: 300px;
 }
 
 
 .top10btn:hover, .chartbtn:hover {
-  color: rgb(0, 206, 0);
+  color: tomato;
   opacity: 1.0;
 }
 
@@ -296,7 +297,7 @@ tr, th, td {
 
   .top10btn, .chartbtn {
     font-size: 1.75rem;
-    width: 75%;
+    width: 80%;
     margin: 25px 0;
   }
   
