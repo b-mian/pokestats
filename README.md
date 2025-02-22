@@ -1,8 +1,6 @@
 # Pokestats
  A data/visualizations frontend application that allow users to view interesting statistics on their favourite Pokemon.
  
-https://www.pokestats-app.com/
- 
  1. All data, charts and stats you will see on this web app were coded up using an open pokemon dataset from Kaggle.
  2. I wrote individual scripts for each class of statistic I wanted to display in Python using pandas/numpy, and converted the raw csv data produced by those scripts into json format.
  3. After parsing through the json data files with javascript and react hooks, I displayed the data in tables and charts using Chart.js, Bootstrap and the react animate library.
