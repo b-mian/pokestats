@@ -1,0 +1,23 @@
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 24px;
+  align-items: start;
+  width: 80%;
+  margin: 32px auto;
+  padding: 0 16px;
+}
+
+.layout__sidebar {
+  position: sticky;
+  top: 24px;
+  align-self: start;
+}
+
+.layout__content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+  min-height: 400px;
+}

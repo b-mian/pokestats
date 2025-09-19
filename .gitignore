@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+/refactor_step1/backend
 
 # testing
 /coverage

@@ -1,0 +1,43 @@
+.dex {
+  width: 90%;
+  max-width: 1600px;  /* optional cap for very large screens */
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.dex__controls { display: flex; gap: 10px; flex-wrap: wrap; margin: 0 auto 16px; justify-content: center; }
+.dex__input { padding: 10px 12px; min-width: 260px; border: 1px solid #ddd; border-radius: 8px; }
+.dex__select { padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; }
+
+.dex__meta { text-align: right; color: #666; margin-bottom: 10px; }
+
+.dex__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);  /* exactly 5 columns */
+  gap: 18px;
+  align-items: stretch;
+}
+
+.dex__pager { display: flex; justify-content: center; align-items: center; gap: 10px; margin: 18px 0 8px; }
+
+.dex-card {
+  border-radius: 12px;
+  border: 3px solid #3a2f2a1f;
+  background: #eaf7f6;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+}
+.dex-card__inner { text-align: center; padding: 16px; }
+.dex-card__sprite { image-rendering: pixelated; margin-bottom: 6px; }
+.dex-card__title { font-weight: 800; margin-bottom: 8px; }
+.dex-card__id { color: #556; font-weight: 600; }
+.dex-card__stats { color: #333; font-size: 14px; line-height: 1.35; }
+
+@media (max-width: 1200px) {
+  .dex__grid { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 900px) {
+  .dex__grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 640px) {
+  .dex__grid { grid-template-columns: repeat(2, 1fr); }
+}

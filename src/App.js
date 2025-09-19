@@ -1,12 +1,10 @@
-// import logo from './logo.svg';
+// src/App.js
 import './App.css';
-import Jumbotron from './components/jumbotron';
 import React from 'react';
-import Splitscreen from './components/splitscreen';
-import LeftSide from './components/leftside';
-import RightSide from './components/rightside';
-
-
+import Jumbotron from './components/Jumbotron';
+import Splitscreen from './components/Splitscreen';
+import LeftSide from './components/Leftside';
+import RightSide from './components/Rightside';
 
 function App() {
   return (

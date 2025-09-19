@@ -1,22 +1,21 @@
-import React from 'react';
+// src/components/jumbotron.js
+import React from "react";
+import "./styles/jumbotron.css";
 
+export default function Jumbotron() {
+  return (
+    <section className="jumbo">
+      <div className="jumbo__bg" aria-hidden="true" />
+      <div className="jumbo__inner">
+        
+        <h1 className="jumbo__title">Pokestats</h1>
+        <p className="jumbo__subtitle">Pokemon by the Numbers</p>
 
-const Jumbotron = () => {
-    return (
-        <div className="jumbotron jumbotron-fluid">
-            <div className="container-fluid">
-                <div className="row justify-content-center">
-                    <span className="col-xs-2"><img className="pokeball" src={`/images/pokeball-img.png`} alt="pokeball"></img></span>
-                    <h1 className="col-xs-6">Pokéstats</h1>
-                    <span className="col-xs-2"><img className="pokeball pokeball-2" src={`/images/pokeball-img.png`} alt="pokeball"></img></span>
-                </div>
-                <hr className="col-xs-12"></hr>
-                <div className="row justify-content-center">
-                    <h3 className="col-xs-12">Pokémon by numbers</h3>
-                </div>
-            </div>
+        
+        <div className="jumbo__actions">
+          
         </div>
-    );
+      </div>
+    </section>
+  );
 }
-
-export default Jumbotron;

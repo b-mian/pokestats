@@ -1,43 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
+// src/components/splitscreen.js
+import React from "react";
+import "./styles/splitscreen.css";
 
-
-const Container = styled.div`
-    display: flex;
-    margin: 0;
-    padding: 0;
-`;
-
-const LeftPane = styled.div`
-    min-width: 25vw;
-    justify-content: center;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    background-color: rgb(238, 22, 22, 1);
-    opacity: 1;
-    z-index: 10;
-`;
-
-const RightPane = styled.div`
-    min-width: 75vw;
-    background-color: white;
-    margin: 0;
-    padding: 0;
-`;
-
-const Splitscreen = ({left: Left, right: Right}) => {
-
-    return (
-        <Container className="pane-container">
-            <LeftPane className='left-pane'>
-                <Left />
-            </LeftPane>
-            <RightPane className='right-pane'>
-                <Right />
-            </RightPane>
-        </Container>
-    );
+export default function Splitscreen({ left: Left, right: Right }) {
+  return (
+    <div className="layout">
+      <aside className="layout__sidebar">
+        <Left />
+      </aside>
+      <main className="layout__content">
+        <Right />
+      </main>
+    </div>
+  );
 }
-
-export default Splitscreen;

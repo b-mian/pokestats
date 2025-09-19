@@ -1,0 +1,55 @@
+.sp-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  pointer-events: none;
+  transition: background .2s ease;
+  z-index: 98;
+}
+.sp-backdrop--open {
+  background: rgba(0,0,0,.35);
+  pointer-events: auto;
+}
+
+.sp-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: #fff;
+  box-shadow: 6px 0 24px rgba(0,0,0,.18);
+  transform: translateX(-100%);
+  transition: transform .25s ease;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  max-width: 92vw;
+}
+.sp-panel--open {
+  transform: translateX(0);
+}
+
+.sp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid #eee;
+}
+.sp-title {
+  margin: 0;
+  font-weight: 800;
+}
+.sp-close {
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.sp-body {
+  padding: 14px 16px 18px;
+  overflow: auto;
+  flex: 1;
+}

@@ -1,74 +1,34 @@
-import React from 'react';
-import { useSpring, animated } from 'react-spring';
-import { useState } from 'react';
-import fastest from '../data/top_10_speed.json';
-import strongest from '../data/top_10_attack.json';
-import hp from '../data/top_10_hp.json';
-import defense from '../data/top_10_defense.json';
-import non_legendary from '../data/top_10_non_legendary.json';
-import legendary from '../data/top_10_legendary.json';
-import TopTenList from './top_ten_list.js';
-import TypesChart from './types_charts.js';
-import GenCharts from './gen_charts';
-import ScrollButton from './scrollbutton';
+import React, { useState } from "react";
+import SlidePanel from "./SlidePanel";
+import TopTensPanel from "./TopTensPanel";
+import GenAveragesPanel from "./GenAveragesPanel";
 
+export default function LeftSide() {
+  const [open, setOpen] = useState(false);
+  const [mode, setMode] = useState(null); // 'top' | 'gen'
 
-const LeftSide = () => {
-    const [showLists, setShowLists] = useState(false);
-    const [showTypeCharts, setShowTypeCharts] = useState(false);
+  function openTop() {
+    setMode('top');
+    setOpen(true);
+  }
+  function openGen() {
+    setMode('gen');
+    setOpen(true);
+  }
 
-    const fadeLists = useSpring(
-        {display: showLists ? 'inline-block' : 'none'},
-    );
-    const fadeCharts = useSpring( 
-        {display: showTypeCharts ? 'inline-block' : 'none'},
-    );
-    const growPane = useSpring(  
-        {   
-            width: showTypeCharts || showLists ? '100vw' : '25vw',
-            height: '100%',
-            background: 'rgb(238, 22, 22, 1)',
-        }
-    );
+  return (
+    <div style={{ padding: 16, display: "grid", gap: 12 }}>
+      <button className="menu-btn" onClick={openTop}>Top Tens</button>
+      <button className="menu-btn" onClick={openGen}>Poké Charts</button>
 
-    let listEvent = (e) => {
-        e.preventDefault();
-        setShowLists(!showLists);
-        setShowTypeCharts(showTypeCharts ? !showTypeCharts : showTypeCharts);
-    }
-    let chartEvent = (e) => {
-        e.preventDefault();
-        setShowTypeCharts(!showTypeCharts);
-        setShowLists(showLists ? !showLists : showLists);
-    }
-
-    return (
-        <animated.div style={growPane} className="left-pane-container container-fluid">
-            <div className="buttons-container">
-                <button onClick={listEvent} className="top10btn">Top Tens</button>
-                <button onClick={chartEvent} className="chartbtn">Poké Charts</button>
-                {/* <button className="chartbtn">Poke Quiz</button> */}
-            </div>  
-            <animated.div style={fadeLists} className="lists container-fluid">
-                <div className="listRow row">
-                    <TopTenList pkmnList={hp} title="by HP" />
-                    <TopTenList pkmnList={fastest} title="by Speed" />
-                    <TopTenList pkmnList={strongest} title="by Attack" />
-                    <TopTenList pkmnList={defense} title="by Defense" />
-                    <TopTenList pkmnList={legendary} title="Legendary" />
-                    <TopTenList pkmnList={non_legendary} title="Non-Legendary" />
-                </div>
-            </animated.div>
-            <animated.div style={fadeCharts} className="graphs container-fluid">
-                <TypesChart /> 
-                <GenCharts />
-            </animated.div>
-            <div>
-                <ScrollButton />
-            </div>
-        </animated.div>
-
-        
-); }
-
-export default LeftSide;
+      <SlidePanel
+        open={open}
+        onClose={() => setOpen(false)}
+        title={mode === 'top' ? "Top Tens" : "Generation Averages"}
+        width={480}
+      >
+        {mode === 'top' ? <TopTensPanel /> : <GenAveragesPanel />}
+      </SlidePanel>
+    </div>
+  );
+}
