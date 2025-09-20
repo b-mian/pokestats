@@ -2,6 +2,7 @@ import React, { useMemo, useState, useEffect } from "react";
 import { usePokemon, useTypeFrequencies } from "../api/hooks";
 import PokedexCard from "./PokedexCard";
 import "./styles/pokedex.css";
+import ScrollButton from "./ScrollButton";
 
 const API_BASE = process.env.REACT_APP_POKESTATS_API || "http://127.0.0.1:8000";
 
@@ -25,8 +26,8 @@ export default function PokedexGrid() {
   // Log what we got
   useEffect(() => {
     // eslint-disable-next-line no-console
-    console.log("[PokedexGrid] API_BASE=", API_BASE, "rows=", data?.length, "count=", count, "loading=", loading, "err=", err);
-  }, [API_BASE, data, count, loading, err]);
+    console.log("rows=", data?.length, "count=", count, "loading=", loading, "err=", err);
+  }, [data, count, loading, err]);
 
   const slot1 = useTypeFrequencies(1);
   const slot2 = useTypeFrequencies(2);
@@ -58,7 +59,7 @@ export default function PokedexGrid() {
 
       <div className="dex__meta">
         {loading ? "Loading…" : `Showing ${data?.length ?? 0} of ${count ?? 0}`}
-        <span style={{ marginLeft: 8, color: "#999" }}>API: {API_BASE}</span>
+        <span style={{ marginLeft: 8, color: "#999", fontSize: '28px', fontWeight: 'bold' }}></span>
       </div>
 
       {err && (
@@ -72,9 +73,10 @@ export default function PokedexGrid() {
       </div>
 
       <div className="dex__pager">
-        <button disabled={!canPrev} onClick={() => setPage(p => p - 1)}>Prev</button>
+        <button style={{backgroundColor: '#3c5454', borderRadius: '12px', width: '80px', color: 'whitesmoke'}} disabled={!canPrev} onClick={() => setPage(p => p - 1)}>Prev</button>
         <span> Page {page + 1} </span>
-        <button disabled={!canNext} onClick={() => setPage(p => p + 1)}>Next</button>
+        <button style={{backgroundColor: '#3c5454', borderRadius: '12px', width: '80px', color: 'whitesmoke'}} disabled={!canNext} onClick={() => setPage(p => p + 1)}>Next</button>
+        <ScrollButton />
       </div>
     </div>
   );

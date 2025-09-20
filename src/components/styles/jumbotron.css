@@ -22,7 +22,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(#0000000f 1px, transparent 1px);
+  background-image: radial-gradient(#0f8b8d 1px, transparent 1px);
   background-size: 14px 14px;
   opacity: 0.35;
   z-index: -1;
@@ -31,13 +31,12 @@
 
 /* Content container (glass card) */
 .jumbo__inner {
-  width: min(80%);
+  width: 100%;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.65);
   backdrop-filter: saturate(140%) blur(10px);
   border: 1px solid rgba(0,0,0,0.06);
   box-shadow: 0 12px 40px rgba(0,0,0,0.12);
-  border-radius: 20px;
   padding: clamp(24px, 4vw, 40px) clamp(20px, 4vw, 48px);
 }
 
@@ -47,14 +46,14 @@
   font-weight: 900;
   line-height: 1.05;
   letter-spacing: -0.02em;
-  font-size: clamp(28px, 6vw, 56px);
-  color: #0b2b36;
+  font-size: clamp(36px, 6vw, 72px);
+  color: #df3918;
 }
 
 .jumbo__subtitle {
   margin: 0 0 18px;
   color: #2a4a55;
-  font-size: clamp(16px, 2.2vw, 20px);
+  font-size: clamp(20px, 2.2vw, 32px);
   line-height: 1.5;
 }
 
@@ -91,10 +90,10 @@
       linear-gradient(180deg, rgba(12,18,22,0.95), rgba(12,18,22,0.72));
   }
   .jumbo__inner {
-    background: rgba(18, 28, 34, 0.55);
+    background: #3c5454;
     border-color: rgba(255,255,255,0.06);
   }
-  .jumbo__title { color: #e9f7ff; }
+  .jumbo__title { color: #df3918; }
   .jumbo__subtitle { color: #c9d9df; }
 }
 

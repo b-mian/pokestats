@@ -8,8 +8,8 @@ export default function Jumbotron() {
       <div className="jumbo__bg" aria-hidden="true" />
       <div className="jumbo__inner">
         
-        <h1 className="jumbo__title">Pokestats</h1>
-        <p className="jumbo__subtitle">Pokemon by the Numbers</p>
+        <h1 className="jumbo__title">Pokéstats</h1>
+        <p className="jumbo__subtitle">Pokémon by the Numbers</p>
 
         
         <div className="jumbo__actions">

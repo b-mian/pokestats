@@ -1,15 +1,15 @@
 .dex {
-  width: 90%;
-  max-width: 1600px;  /* optional cap for very large screens */
+  width: 100%;
+  max-width: 1800px;  /* optional cap for very large screens */
   margin: 24px auto;
   padding: 0 16px;
 }
 
 .dex__controls { display: flex; gap: 10px; flex-wrap: wrap; margin: 0 auto 16px; justify-content: center; }
-.dex__input { padding: 10px 12px; min-width: 260px; border: 1px solid #ddd; border-radius: 8px; }
-.dex__select { padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; }
+.dex__input { padding: 10px 12px; min-width: 375px; border: 1px solid #de4a4a; border-radius: 8px; }
+.dex__select { padding: 10px 12px; border: 1px solid #de4a4a; border-radius: 8px; }
 
-.dex__meta { text-align: right; color: #666; margin-bottom: 10px; }
+.dex__meta { text-align: right; color: #666; margin-bottom: 10px; font-weight: bold; font-size: 20px; }
 
 .dex__grid {
   display: grid;
