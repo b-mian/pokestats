@@ -1,0 +1,52 @@
+[
+  {
+    "question": "Which starter eventually evolves into Charizard?",
+    "options": ["Squirtle", "Charmander", "Bulbasaur", "Chikorita"],
+    "answer": 1
+  },
+  {
+    "question": "Pikachu evolves into Raichu using which evolution stone?",
+    "options": ["Fire Stone", "Thunder Stone", "Water Stone", "Leaf Stone"],
+    "answer": 1
+  },
+  {
+    "question": "Which of these is a Water-type Pokémon?",
+    "options": ["Squirtle", "Geodude", "Oddish", "Vulpix"],
+    "answer": 0
+  },
+  {
+    "question": "Which type is super-effective against Fire?",
+    "options": ["Grass", "Bug", "Water", "Normal"],
+    "answer": 2
+  },
+  {
+    "question": "Which of these is a Legendary Pokémon?",
+    "options": ["Beedrill", "Raticate", "Articuno", "Farfetch’d"],
+    "answer": 2
+  },
+  {
+    "question": "Among these, which is generally known for very high Speed?",
+    "options": ["Snorlax", "Onix", "Jolteon", "Blastoise"],
+    "answer": 2
+  },
+  {
+    "question": "Which Pokémon is famously known for extremely high Defense?",
+    "options": ["Shuckle", "Butterfree", "Pidgeot", "Rapidash"],
+    "answer": 0
+  },
+  {
+    "question": "Which Pokémon is best known for very high Special Attack among these?",
+    "options": ["Alakazam", "Snorlax", "Onix", "Muk"],
+    "answer": 0
+  },
+  {
+    "question": "Which Pokémon is famous for having huge HP among these?",
+    "options": ["Gengar", "Chansey", "Pikachu", "Eevee"],
+    "answer": 1
+  },
+  {
+    "question": "What is Bulbasaur’s dual typing?",
+    "options": ["Grass/Fairy", "Grass/Poison", "Grass/Bug", "Grass/Ground"],
+    "answer": 1
+  }
+]
