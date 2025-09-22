@@ -5,12 +5,14 @@
 /.pnp
 .pnp.js
 /refactor_step1/backend
-
+/build
 # testing
 /coverage
 
 /refactor_step1/.venv
 /backend_db
+/backend_db/scripts
+/backend_db/frontend_examples
 *node_modules
 
 # misc
