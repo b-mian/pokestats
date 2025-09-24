@@ -67,7 +67,7 @@ export default function TopTensPanel() {
             }}>
               <div style={{ fontWeight: 800 }}>#{i+1}</div>
               <img src={spriteUrl(r.id)} alt={r.name} width={36} height={36} style={{ imageRendering: "pixelated" }} />
-              <div style={{ fontWeight: 700 }}>{r.name} <span style={{ color: "#667" }}>#{r.id}</span></div>
+              <div style={{ fontWeight: 700 }}>{String(r.name.charAt(0).toUpperCase()) + String(r.name).slice(1)} <span style={{ color: "#667" }}>#{r.id}</span></div>
               <div style={{ fontVariantNumeric: "tabular-nums", color: "#0b2b36", fontWeight: 800 }}>{r.value}</div>
             </li>
           ))}

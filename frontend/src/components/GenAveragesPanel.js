@@ -28,14 +28,33 @@ export default function GenAveragesPanel() {
     // Replace nulls with 0 for chart rendering, but keep a note below
     const plotted = vals.map(v => (v == null ? 0 : v));
 
+    // Per-bar colors (same length as plotted)
+    const bg = [
+      "rgba(99, 132, 255, 0.7)",  // HP
+      "rgba(255, 99, 132, 0.7)",  // Attack
+      "rgba(54, 162, 235, 0.7)",  // Defense
+      "rgba(255, 206, 86, 0.7)",  // Sp. Atk
+      "rgba(75, 192, 192, 0.7)",  // Sp. Def
+      "rgba(153, 102, 255, 0.7)", // Speed
+    ].slice(0, plotted.length);
+
+    const borders = [
+      "rgba(99, 132, 255, 1)",
+      "rgba(255, 99, 132, 1)",
+      "rgba(54, 162, 235, 1)",
+      "rgba(255, 206, 86, 1)",
+      "rgba(75, 192, 192, 1)",
+      "rgba(153, 102, 255, 1)",
+    ].slice(0, plotted.length);
+
     return {
       chartData: {
         labels,
         datasets: [{
           label: `Generation ${gen} Averages`,
           data: plotted,
-          backgroundColor: 'rgba(75,192,192,0.4)',
-          borderColor: 'rgba(75,192,192,1)',
+          backgroundColor: bg,     // ← per-bar colors
+          borderColor: borders,    // ← per-bar borders
           borderWidth: 1
         }]
       },

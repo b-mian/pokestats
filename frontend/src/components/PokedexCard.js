@@ -18,13 +18,13 @@ export default function PokedexCard({ p }) {
       <div className="dex-card__inner">
         <img
           src={spriteUrl(p.id)}
-          alt={p.name}
+          alt={String(p.name.charAt(0).toUpperCase()) + String(p.name).slice(1)}
           className="dex-card__sprite"
           loading="lazy"
           width={72}
           height={72}
         />
-        <div className="dex-card__title">{p.name} <span className="dex-card__id">#{p.id}</span></div>
+        <div className="dex-card__title">{String(p.name.charAt(0).toUpperCase()) + String(p.name).slice(1)} <span className="dex-card__id">#{p.id}</span></div>
         <div style={{ margin: "6px 0 10px" }}>
           <span style={pill}>{p.type1}</span>
           {p.type2 ? <span style={pill}>{p.type2}</span> : null}
