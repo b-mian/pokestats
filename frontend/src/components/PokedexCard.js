@@ -34,8 +34,8 @@ export default function PokedexCard({ p }) {
           <div>Attack: {p.attack}</div>
           <div>Speed: {p.speed}</div>
           <div>Defense: {p.defense}</div>
-          <div>Sp. Attack: {p.special_attack}</div>
-          <div>Sp.Defense: {p.special_defense}</div>
+          <div>Sp. Attack: {p.sp_attack}</div>
+          <div>Sp.Defense: {p.sp_defense}</div>
         </div>
       </div>
     </div>

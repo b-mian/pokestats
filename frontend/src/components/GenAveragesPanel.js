@@ -20,8 +20,8 @@ export default function GenAveragesPanel() {
 
     // Pad to 6 items in case backend sends fewer, preserve order:
     const labels = resp.labels || ["HP","Attack","Speed","Defense","Sp. Attack","Sp. Defense"];
-    const vals = (resp.values || []).slice(0, 6);
-    while (vals.length < 6) vals.push(null);
+    const vals = (resp.values || []).slice(0, 9);
+    while (vals.length < 9) vals.push(null);
 
     const nulls = vals.some(v => v === null || v === undefined);
 
@@ -48,7 +48,7 @@ export default function GenAveragesPanel() {
       <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
         <label style={{ fontWeight: 700, alignSelf: "center" }}>Gen</label>
         <select value={gen} onChange={e => setGen(Number(e.target.value))} style={{ padding: 8, borderRadius: 8 }}>
-          {[1,2,3,4,5,6].map(g => <option key={g} value={g}>Gen {g}</option>)}
+          {[1,2,3,4,5,6,7,8,9].map(g => <option key={g} value={g}>Gen {g}</option>)}
         </select>
       </div>
 

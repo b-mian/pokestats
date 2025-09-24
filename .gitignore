@@ -10,9 +10,9 @@
 /coverage
 
 /refactor_step1/.venv
-/backend_db
 /backend_db/scripts
 /backend_db/frontend_examples
+/backend_db/.venv
 *node_modules
 
 # misc
