@@ -72,12 +72,6 @@ export default function GenAveragesPanel() {
       </div>
 
       {chartData ? <HorizontalBar data={chartData} /> : <div>Loading…</div>}
-
-      {hasNulls && (
-        <div style={{ marginTop: 8, color: "#777", fontSize: 13 }}>
-          Note: Special Attack / Special Defense are not available for this dataset yet.
-        </div>
-      )}
     </div>
   );
 }
