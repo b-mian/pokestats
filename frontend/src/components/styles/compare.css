@@ -1,0 +1,259 @@
+/* Compare page — side-by-side Pokémon comparison.
+   Palette: teal #0f8b8d accents on dark-slate #24333c headings. */
+
+.cmp-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+  text-align: left;
+  color: #24333c;
+}
+
+.cmp-title {
+  margin: 0 0 18px;
+  font-size: 28px;
+  font-weight: 800;
+  color: #24333c;
+  border-bottom: 3px solid #0f8b8d;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+/* ---------- cards ---------- */
+
+.cmp-card {
+  background: #fff;
+  border: 1px solid #e6ebee;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(36, 51, 60, 0.08);
+  padding: 18px;
+  margin-bottom: 20px;
+}
+
+.cmp-card-title {
+  margin: 0 0 14px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #24333c;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- empty state ---------- */
+
+.cmp-empty {
+  text-align: center;
+  padding: 40px 18px;
+}
+
+.cmp-empty-text {
+  margin: 0 0 18px;
+  font-size: 17px;
+  color: #5b6a74;
+}
+
+.cmp-empty-picker {
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------- selection row ---------- */
+
+.cmp-selection {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+}
+
+.cmp-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cmp-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 6px 5px 5px;
+  background: #f6f9fa;
+  border: 2px solid #0f8b8d;
+  border-radius: 999px;
+}
+
+.cmp-chip-sprite {
+  image-rendering: pixelated;
+  display: block;
+}
+
+.cmp-chip-name {
+  font-weight: 700;
+  font-size: 14px;
+  color: #24333c;
+  white-space: nowrap;
+}
+
+.cmp-chip-remove {
+  width: 22px;
+  height: 22px;
+  line-height: 1;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #dde5e8;
+  color: #24333c;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cmp-chip-remove:hover {
+  background: #e4572e;
+  color: #fff;
+}
+
+.cmp-add {
+  flex: 1 1 240px;
+  min-width: 220px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cmp-note,
+.cmp-loading {
+  font-size: 14px;
+  font-weight: 600;
+  color: #7b8a94;
+}
+
+.cmp-hint {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #7b8a94;
+  text-align: center;
+}
+
+/* ---------- radar ---------- */
+
+.cmp-radar {
+  position: relative;
+  height: 380px;
+}
+
+/* ---------- head-to-head ---------- */
+
+.cmp-h2h-line {
+  margin: 0 0 8px;
+  font-size: 15px;
+  color: #24333c;
+}
+
+.cmp-h2h-line:last-child {
+  margin-bottom: 0;
+}
+
+.cmp-mult {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 14px;
+  color: #fff;
+}
+
+.cmp-mult--good { background: #2e9e5b; }
+.cmp-mult--neutral { background: #8a97a0; }
+.cmp-mult--bad { background: #e08b2e; }
+.cmp-mult--zero { background: #c8402f; }
+
+.cmp-h2h-note {
+  color: #7b8a94;
+  font-size: 14px;
+}
+
+/* ---------- table ---------- */
+
+.cmp-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cmp-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 480px;
+}
+
+.cmp-table th,
+.cmp-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #eef2f4;
+  text-align: center;
+}
+
+.cmp-table tbody tr:last-child th,
+.cmp-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.cmp-th-label {
+  width: 140px;
+  min-width: 120px;
+}
+
+.cmp-col-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding-top: 8px;
+  border-top: 4px solid #0f8b8d;
+}
+
+.cmp-col-sprite {
+  image-rendering: pixelated;
+}
+
+.cmp-col-name {
+  font-weight: 700;
+  font-size: 15px;
+  color: #0f8b8d;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.cmp-col-name:hover {
+  text-decoration: underline;
+}
+
+.cmp-col-types {
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+.cmp-row-label {
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  color: #5b6a74;
+  white-space: nowrap;
+}
+
+.cmp-cell {
+  font-size: 15px;
+  color: #24333c;
+  font-variant-numeric: tabular-nums;
+}
+
+.cmp-cell--best {
+  font-weight: 800;
+  color: #0b6b6d;
+  background: rgba(15, 139, 141, 0.12);
+}
+
+@media (max-width: 640px) {
+  .cmp-page { padding: 16px; }
+  .cmp-add { justify-content: flex-start; }
+  .cmp-radar { height: 320px; }
+}

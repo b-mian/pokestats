@@ -3,12 +3,13 @@ __pycache__/
 *.pyo
 .git
 .gitignore
-.env
-.git
 **/__pycache__/
 **/*.pyc
 **/*.pyo
 **/.env
+**/.venv
 backend_db/.venv
+backend_db/scripts/.venv
+backend_db/scripts/sql/pokestats.sqlite
 frontend/node_modules
 frontend/build

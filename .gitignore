@@ -9,9 +9,15 @@
 # testing
 /coverage
 
+# virtual environments (any depth)
+.venv/
 /refactor_step1/.venv
 /backend_db/.venv
+
 *node_modules
+
+# generated database — rebuilt by backend_db/scripts/load_pokedex.py
+backend_db/scripts/sql/pokestats.sqlite
 
 # misc
 .DS_Store
@@ -23,3 +29,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# build artifacts
+frontend/build/
+backend_db/backend/frontend_build/
+__pycache__/

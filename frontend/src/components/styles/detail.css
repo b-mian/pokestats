@@ -1,0 +1,497 @@
+/*********************************
+    POKEMON DETAIL PAGE
+**********************************/
+
+.detail {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+  text-align: left;           /* .App centers everything by default */
+  color: #33444d;
+}
+
+.detail--centered {
+  text-align: center;
+  padding-top: 64px;
+}
+
+.detail__status {
+  color: #24333c;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.detail__status p {
+  font-weight: 400;
+  color: #667;
+}
+
+/* ---- top bar ---- */
+.detail__topbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.detail__navlink {
+  color: #0f8b8d;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+
+.detail__navlink:hover {
+  background: #e3f2f2;
+  color: #0b6a6c;
+}
+
+/* ---- shared card shell ---- */
+.detail-card {
+  background: #fff;
+  border: 1px solid #e6ecec;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(36, 51, 60, 0.08);
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+
+.detail-card h3 {
+  margin: 0 0 14px;
+  color: #24333c;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  border-bottom: 3px solid #e3f2f2;
+  padding-bottom: 8px;
+}
+
+.detail-empty {
+  margin: 0;
+  color: #778;
+  font-style: italic;
+}
+
+/* ---- header ---- */
+.detail-hero {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+.detail-hero__artwrap {
+  flex: 0 0 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eaf7f6;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.detail-hero__art {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  display: block;
+}
+
+.detail-hero__info {
+  flex: 1 1 380px;
+  min-width: 0;
+}
+
+.detail-hero__name {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 800;
+  color: #24333c;
+}
+
+.detail-hero__id {
+  color: #8a9aa4;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.detail-hero__genus {
+  font-style: italic;
+  color: #667;
+  margin: 2px 0 12px;
+}
+
+.detail-hero__types {
+  margin-bottom: 10px;
+}
+
+.detail-hero__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.detail-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+.detail-badge--legendary {
+  background: #f6d365;
+  color: #6b4f00;
+  border: 1px solid #dcb84a;
+}
+
+.detail-badge--mythical {
+  background: #e5d4f5;
+  color: #5a2d86;
+  border: 1px solid #cbb0e6;
+}
+
+.detail-badge--form {
+  background: #eef1f2;
+  color: #5a6b74;
+  border: 1px solid #dde3e5;
+}
+
+.detail-hero__flavor {
+  margin: 0 0 16px;
+  line-height: 1.55;
+  color: #44555e;
+  max-width: 62ch;
+}
+
+/* ---- quick facts strip ---- */
+.detail-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.detail-fact {
+  background: #f6fafa;
+  border: 1px solid #e6ecec;
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+
+.detail-fact__label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #8a9aa4;
+  font-weight: 700;
+}
+
+.detail-fact__value {
+  font-weight: 700;
+  color: #24333c;
+  margin-top: 2px;
+  word-break: break-word;
+}
+
+/* ---- abilities ---- */
+.detail-abilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.detail-ability {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #e3f2f2;
+  color: #0b6a6c;
+  border: 1px solid #c7e4e4;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.detail-ability--hidden {
+  background: #f2f4f5;
+  color: #7c8b93;
+  border-color: #e2e7e9;
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* ---- base stats ---- */
+.detail-stats {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+.detail-stats__bars {
+  flex: 1 1 340px;
+  min-width: 0;
+}
+
+.detail-stats__radar {
+  flex: 1 1 340px;
+  min-width: 0;
+  height: 340px;
+  position: relative;
+}
+
+.detail-bar {
+  display: grid;
+  grid-template-columns: 76px 44px 1fr;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 9px;
+}
+
+.detail-bar__label {
+  font-weight: 700;
+  color: #4a5b64;
+  font-size: 14px;
+}
+
+.detail-bar__value {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  font-weight: 700;
+  color: #24333c;
+}
+
+.detail-bar__track {
+  height: 12px;
+  border-radius: 999px;
+  background: #eef1f2;
+  overflow: hidden;
+}
+
+.detail-bar__fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: #0f8b8d;
+}
+
+.detail-bar--total {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 2px solid #e3f2f2;
+  font-weight: 800;
+}
+
+.detail-bar--total .detail-bar__label,
+.detail-bar--total .detail-bar__value {
+  color: #24333c;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.detail-bar--total .detail-bar__track {
+  background: transparent;
+}
+
+/* ---- type matchups ---- */
+.detail-matchups {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detail-matchup {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: #f6fafa;
+  border-left: 4px solid #cfd8dc;
+}
+
+.detail-matchup--weak { border-left-color: #de4a4a; }
+.detail-matchup--resist { border-left-color: #0f8b8d; }
+.detail-matchup--immune { border-left-color: #24333c; }
+
+.detail-matchup__label {
+  font-weight: 800;
+  color: #24333c;
+  font-size: 14px;
+}
+
+.detail-matchup__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 0;
+}
+
+/* ---- evolution chain ---- */
+.detail-evo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.detail-evo__arrow {
+  font-size: 26px;
+  color: #9fb0b8;
+  font-weight: 700;
+  padding: 0 4px;
+}
+
+.detail-evo__stage {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detail-evo__member {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  width: 140px;
+  padding: 10px 8px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  background: #f6fafa;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.detail-evo__member:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(36, 51, 60, 0.12);
+}
+
+.detail-evo__member--current {
+  border-color: #0f8b8d;
+  background: #e3f2f2;
+}
+
+.detail-evo__sprite {
+  image-rendering: pixelated;
+  display: block;
+  margin: 0 auto;
+}
+
+.detail-evo__name {
+  font-weight: 700;
+  color: #24333c;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.detail-evo__types {
+  line-height: 1.9;
+}
+
+.detail-evo__caption {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #6b7c85;
+  font-weight: 600;
+}
+
+/* ---- forms ---- */
+.detail-forms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.detail-form {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  width: 150px;
+  padding: 10px 8px;
+  border-radius: 12px;
+  border: 2px solid #e6ecec;
+  background: #f6fafa;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.detail-form:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(36, 51, 60, 0.12);
+}
+
+.detail-form--current {
+  border-color: #0f8b8d;
+  background: #e3f2f2;
+}
+
+.detail-form__sprite {
+  image-rendering: pixelated;
+  display: block;
+  margin: 0 auto;
+}
+
+.detail-form__name {
+  font-weight: 700;
+  color: #24333c;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.detail-form__types {
+  line-height: 1.9;
+}
+
+.detail-form__bst {
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f8b8d;
+}
+
+/* ---- responsive ---- */
+@media (max-width: 900px) {
+  .detail-stats {
+    flex-direction: column;
+  }
+  .detail-stats__bars,
+  .detail-stats__radar {
+    width: 100%;
+    flex: 1 1 auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .detail {
+    padding: 16px;
+  }
+  .detail-card {
+    padding: 16px;
+  }
+  .detail-hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .detail-hero__artwrap {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 260px;
+  }
+  .detail-hero__info {
+    width: 100%;
+  }
+  .detail-hero__badges {
+    justify-content: center;
+  }
+  .detail-hero__flavor {
+    max-width: none;
+  }
+  .detail-matchup {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}

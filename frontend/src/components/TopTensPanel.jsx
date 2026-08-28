@@ -9,6 +9,7 @@ const CATS = [
   { key: "speed", label: "Speed" },
   { key: "sp_attack", label: "Sp. Attack" },
   { key: "sp_defense", label: "Sp. Defense" },
+  { key: "bst", label: "Total (BST)" },
 ];
 
 export default function TopTensPanel() {

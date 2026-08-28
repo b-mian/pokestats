@@ -1,0 +1,528 @@
+/* games.css — chrome for the game pages (Poké Quiz, Higher / Lower).
+   Companion to quiz.css: that file owns .quiz-card / .quiz-option /
+   .quiz-progress and the correct / wrong outlines; everything here is the
+   page shell, media blocks, timers and the higher-lower board.
+   Compound selectors (.quiz-option.game-opt--correct) are used wherever we
+   need to win over quiz.css regardless of stylesheet order. */
+
+:root {
+  --game-teal: #0f8b8d;
+  --game-teal-dark: #0b6f70;
+  --game-slate: #24333c;
+  --game-muted: #6b7280;
+  --game-line: #e5e7eb;
+  --game-good: #2e7d32;
+  --game-bad: #b00020;
+}
+
+/* ---------- page shell ---------- */
+
+.game-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+  text-align: left;
+  color: var(--game-slate);
+}
+
+.game-page h2,
+.game-page h3 {
+  color: var(--game-slate);
+  margin: 0;
+}
+
+.game-page__title {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+
+.game-page__lede {
+  color: var(--game-muted);
+  font-size: 14px;
+  margin: 0 0 20px;
+}
+
+.game-card {
+  background: #fff;
+  border: 1px solid var(--game-line);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.08);
+  padding: 20px;
+}
+
+.game-card + .game-card { margin-top: 16px; }
+
+.game-center { text-align: center; }
+
+.game-note {
+  font-size: 13px;
+  color: var(--game-muted);
+}
+
+.game-error {
+  border: 1px solid #f2c4cc;
+  background: #fdeef1;
+  color: var(--game-bad);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+/* ---------- buttons ---------- */
+
+.game-btn {
+  appearance: none;
+  border: 1px solid var(--game-teal-dark);
+  background: var(--game-teal);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+.game-btn:hover:not(:disabled) {
+  background: var(--game-teal-dark);
+  box-shadow: 0 3px 10px rgba(15, 139, 141, 0.28);
+  transform: translateY(-1px);
+}
+
+.game-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.game-btn--ghost {
+  background: #fff;
+  color: var(--game-teal-dark);
+  border-color: var(--game-line);
+}
+
+.game-btn--ghost:hover:not(:disabled) {
+  background: #f3fbfb;
+  color: var(--game-teal-dark);
+  box-shadow: 0 3px 10px rgba(16, 24, 40, 0.1);
+}
+
+.game-btn--lg { font-size: 17px; padding: 12px 28px; }
+
+.game-btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* ---------- quiz: start screen ---------- */
+
+.diff-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.diff-card {
+  appearance: none;
+  text-align: left;
+  background: #fff;
+  border: 1px solid var(--game-line);
+  border-radius: 12px;
+  padding: 14px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.06);
+  transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease;
+}
+
+.diff-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(16, 24, 40, 0.12);
+  border-color: #cfe6e6;
+}
+
+.diff-card--active {
+  border-color: var(--game-teal);
+  box-shadow: 0 0 0 2px rgba(15, 139, 141, 0.22), 0 6px 14px rgba(16, 24, 40, 0.1);
+}
+
+.diff-card__name {
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--game-slate);
+  margin-bottom: 4px;
+}
+
+.diff-card__blurb {
+  font-size: 12.5px;
+  color: var(--game-muted);
+  line-height: 1.45;
+}
+
+.game-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--game-slate);
+  cursor: pointer;
+  margin-bottom: 18px;
+}
+
+.game-check input { width: 16px; height: 16px; accent-color: var(--game-teal); cursor: pointer; }
+
+/* ---------- quiz: play ---------- */
+
+.quiz-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.quiz-score {
+  font-weight: 700;
+  color: var(--game-teal-dark);
+  font-size: 13px;
+}
+
+.quiz-progress-wrap { margin-bottom: 14px; }
+
+/* compound selector so the teal fill wins over quiz.css's blue default */
+.quiz-progress .quiz-progress-bar { transition: width 260ms ease; background: var(--game-teal); }
+
+/* timed mode: shrinking bar */
+.quiz-timer {
+  height: 6px;
+  background: var(--game-line);
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.quiz-timer-bar {
+  height: 6px;
+  background: var(--game-teal);
+  transition: width 120ms linear, background 200ms ease;
+}
+
+.quiz-timer-bar--low { background: var(--game-bad); }
+
+.quiz-timer-label {
+  display: block;
+  text-align: right;
+  font-size: 11.5px;
+  color: var(--game-muted);
+  margin-top: 4px;
+}
+
+.quiz-kind {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--game-teal-dark);
+  background: #e9f5f5;
+  border-radius: 9999px;
+  padding: 3px 10px;
+  margin-bottom: 10px;
+}
+
+.quiz-stage { text-align: center; margin-bottom: 14px; }
+
+.quiz-artwork {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Silhouette: fully darkened until the answer is in, then revealed. Both
+   states carry the same filter functions so the transition interpolates. */
+.quiz-silhouette {
+  filter: brightness(0) drop-shadow(0 6px 14px rgba(0, 0, 0, 0));
+  transition: filter 450ms ease;
+}
+
+.quiz-silhouette--revealed {
+  /* 1.001, not 1: the CSS minifier collapses brightness(1) to brightness(),
+     which Chrome computes as brightness(0) — the reveal would never happen. */
+  filter: brightness(1.001) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.25));
+}
+
+.quiz-flavor {
+  margin: 0 0 14px;
+  padding: 14px 16px;
+  border-left: 4px solid var(--game-teal);
+  background: #f6fafa;
+  border-radius: 0 10px 10px 0;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #37474f;
+}
+
+/* option buttons */
+.game-opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: box-shadow 120ms ease, background 120ms ease;
+}
+
+.game-opt:hover:not(:disabled) { box-shadow: 0 2px 8px rgba(16, 24, 40, 0.1); }
+.game-opt:disabled { cursor: default; }
+
+.game-opt__sprite {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.quiz-option.game-opt--correct { background: #eaf5eb; border-color: #cfe6d1; color: var(--game-good); font-weight: 700; }
+.quiz-option.game-opt--wrong { background: #fdeef1; border-color: #f2c4cc; color: var(--game-bad); font-weight: 700; }
+
+/* higher_stat: two big side-by-side cards */
+.hs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.hs-card {
+  appearance: none;
+  background: #fff;
+  border: 1px solid var(--game-line);
+  border-radius: 12px;
+  padding: 16px 12px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--game-slate);
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.06);
+  transition: transform 140ms ease, box-shadow 140ms ease;
+}
+
+.hs-card:hover:not(:disabled) { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(16, 24, 40, 0.12); }
+.hs-card:disabled { cursor: default; }
+
+.hs-card__sprite { width: 80px; height: 80px; object-fit: contain; image-rendering: pixelated; }
+
+.hs-card.game-opt--correct { background: #eaf5eb; border-color: #cfe6d1; color: var(--game-good); }
+.hs-card.game-opt--wrong { background: #fdeef1; border-color: #f2c4cc; color: var(--game-bad); }
+
+.quiz-verdict { font-size: 13px; font-weight: 700; }
+.quiz-verdict--good { color: var(--game-good); }
+.quiz-verdict--bad { color: var(--game-bad); }
+
+/* ---------- quiz: results ---------- */
+
+.result-score {
+  font-size: 46px;
+  font-weight: 800;
+  color: var(--game-teal-dark);
+  line-height: 1.1;
+  margin: 6px 0 2px;
+}
+
+.result-sub { color: var(--game-muted); font-size: 14px; margin-bottom: 14px; }
+
+.result-best {
+  display: inline-block;
+  background: #f4f6f7;
+  border-radius: 9999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  color: var(--game-slate);
+  margin-bottom: 16px;
+}
+
+.result-newbest {
+  display: inline-block;
+  background: #eaf5eb;
+  color: var(--game-good);
+  font-weight: 800;
+  border-radius: 9999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  margin: 0 0 16px 8px;
+}
+
+/* ---------- higher / lower ---------- */
+
+.hl-stats {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.hl-chip {
+  background: #fff;
+  border: 1px solid var(--game-line);
+  border-radius: 9999px;
+  padding: 8px 18px;
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--game-slate);
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.06);
+}
+
+.hl-chip--streak { color: var(--game-teal-dark); border-color: #bfe3e3; background: #f3fbfb; }
+
+.hl-question {
+  text-align: center;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.45;
+  margin: 0 0 14px;
+  color: var(--game-slate);
+}
+
+.hl-question em { color: var(--game-teal-dark); font-style: normal; }
+
+.hl-board {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.hl-card {
+  background: #fff;
+  border: 2px solid var(--game-line);
+  border-radius: 12px;
+  padding: 18px 14px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.08);
+  transition: border-color 200ms ease, background 200ms ease;
+}
+
+.hl-card__art {
+  width: 200px;
+  height: 200px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 6px;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.16));
+}
+
+.hl-card__name { font-size: 20px; font-weight: 800; color: var(--game-slate); }
+.hl-card__id { font-size: 13px; color: var(--game-muted); font-weight: 600; }
+
+.hl-card__stat {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--game-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+
+.hl-card__value {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--game-teal-dark);
+}
+
+.hl-card__value--hidden { color: #b6c2c9; }
+
+.hl-card--correct { border-color: var(--game-good); background: #eaf5eb; animation: hl-flash-good 600ms ease; }
+.hl-card--correct .hl-card__value { color: var(--game-good); }
+
+.hl-card--wrong { border-color: var(--game-bad); background: #fdeef1; animation: hl-flash-bad 600ms ease; }
+.hl-card--wrong .hl-card__value { color: var(--game-bad); }
+
+@keyframes hl-flash-good {
+  0% { background: #b6e0b9; transform: scale(1.015); }
+  100% { background: #eaf5eb; transform: scale(1); }
+}
+
+@keyframes hl-flash-bad {
+  0% { background: #f7c3cd; transform: scale(1.015); }
+  100% { background: #fdeef1; transform: scale(1); }
+}
+
+.hl-vs {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--game-muted);
+  letter-spacing: 0.05em;
+  text-align: center;
+  padding: 0 4px;
+}
+
+.hl-buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
+
+.hl-guess {
+  appearance: none;
+  min-width: 190px;
+  font-size: 19px;
+  font-weight: 800;
+  padding: 16px 24px;
+  border-radius: 12px;
+  border: 1px solid var(--game-teal-dark);
+  background: var(--game-teal);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+.hl-guess:hover:not(:disabled) {
+  background: var(--game-teal-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 139, 141, 0.3);
+}
+
+.hl-guess:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.hl-feedback {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  min-height: 22px;
+}
+
+.hl-feedback--good { color: var(--game-good); }
+.hl-feedback--bad { color: var(--game-bad); }
+
+.hl-final {
+  font-size: 52px;
+  font-weight: 800;
+  color: var(--game-teal-dark);
+  line-height: 1.05;
+  margin: 8px 0 2px;
+}
+
+/* ---------- narrow screens ---------- */
+
+@media (max-width: 720px) {
+  .game-page { padding: 16px; }
+  .diff-grid { grid-template-columns: 1fr; }
+  .hl-board { grid-template-columns: 1fr; }
+  .hl-vs { padding: 4px 0; }
+  .hl-card__art { width: 150px; height: 150px; }
+  .hl-buttons { flex-direction: column; align-items: stretch; }
+  .hl-guess { min-width: 0; width: 100%; }
+  .hs-grid { grid-template-columns: 1fr; }
+}

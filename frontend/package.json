@@ -3,30 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.0",
     "bootstrap-icons": "^1.6.1",
-    "chart.js": "^2.9.4",
+    "chart.js": "^4.5.1",
     "react": "^17.0.1",
-    "react-chartjs-2": "^2.11.1",
+    "react-chartjs-2": "^5.3.1",
     "react-dom": "^17.0.1",
-    "react-scripts": "^5.0.1",
+    "react-router-dom": "^6.30.6",
     "react-spring": "^8.0.27",
-    "styled-components": "^5.3.5",
-    "web-vitals": "^1.1.0"
+    "styled-components": "^5.3.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run"
   },
   "browserslist": {
     "production": [
@@ -39,5 +31,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@vitejs/plugin-react": "^5.2.0",
+    "jsdom": "^29.1.1",
+    "vite": "^8.2.2",
+    "vitest": "^4.1.11"
   }
 }
