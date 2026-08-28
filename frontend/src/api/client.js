@@ -10,7 +10,13 @@ async function get(url) {
   const res = await fetch(url, { credentials: "omit" });
   if (!res.ok) {
     const text = await res.text().catch(() => "");
-    throw new Error(`HTTP ${res.status} on ${url}: ${text || res.statusText}`);
+    throw new Error(`HTTP ${res.status} on ${url}: ${text.slice(0, 200) || res.statusText}`);
+  }
+  // Guard against HTML sneaking back (e.g. a misrouted SPA fallback) so the
+  // failure reads clearly instead of "<!DOCTYPE ... is not valid JSON".
+  const ctype = res.headers.get("content-type") || "";
+  if (!ctype.includes("json")) {
+    throw new Error(`Expected JSON from ${url} but got ${ctype || "unknown content"} — try refreshing the page.`);
   }
   return res.json();
 }

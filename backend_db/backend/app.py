@@ -452,12 +452,52 @@ app.include_router(router)
 
 build_dir = Path(__file__).parent / "frontend_build"
 if build_dir.exists():
+    import re
 
-    @app.get("/{full_path:path}", include_in_schema=False)
-    def spa_fallback(full_path: str):
-        # Serve real files (favicon, manifest); everything else falls back to
-        # index.html so client-side routes deep-link correctly.
+    ASSET_LIKE = re.compile(r"\.\w{1,8}$")  # paths ending in a file extension
+
+    from fastapi import Request
+    from fastapi.responses import RedirectResponse
+
+    LEGACY_API_PREFIXES = ("pokemon", "stats")
+
+    @app.api_route("/{full_path:path}", methods=["GET", "HEAD"], include_in_schema=False)
+    def spa_fallback(full_path: str, request: Request):
+        """Serve the SPA. Cache policy is the standard SPA recipe:
+
+        - hashed /assets/* files: immutable, cache for a year
+        - other real files (favicon, sprites, robots.txt): cache briefly
+        - index.html (and client-side routes): no-cache, so every navigation
+          revalidates and a fresh deploy takes effect immediately
+        - unknown /api/* or asset-like paths: a real 404, never HTML —
+          otherwise a stale bundle's API call gets index.html back and dies
+          with "<!DOCTYPE ... is not valid JSON"
+        - legacy un-prefixed API calls (a stale cached bundle from before the
+          /api split): redirected to /api/* so they keep working. Only fetches
+          are redirected — page navigations advertise text/html in Accept and
+          fall through to the SPA, so deep links like /pokemon/6 still render.
+        """
+        if full_path.startswith("api/") or full_path == "api":
+            raise HTTPException(404, "Unknown API endpoint")
+
+        root = full_path.split("/", 1)[0]
+        wants_html = "text/html" in request.headers.get("accept", "")
+        if root in LEGACY_API_PREFIXES and not wants_html:
+            target = f"/api/{full_path}"
+            if request.url.query:
+                target += f"?{request.url.query}"
+            return RedirectResponse(target, status_code=307)
+
         candidate = build_dir / full_path
         if full_path and candidate.is_file():
-            return FileResponse(candidate)
-        return FileResponse(build_dir / "index.html")
+            if full_path.startswith("assets/"):
+                headers = {"Cache-Control": "public, max-age=31536000, immutable"}
+            else:
+                headers = {"Cache-Control": "public, max-age=3600"}
+            return FileResponse(candidate, headers=headers)
+
+        if ASSET_LIKE.search(full_path):
+            raise HTTPException(404, "File not found")
+
+        return FileResponse(build_dir / "index.html",
+                            headers={"Cache-Control": "no-cache"})
